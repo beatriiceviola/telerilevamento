@@ -28,4 +28,5 @@ plot (flowers, insects, col= "darkmagenta", pch= 24)
 #symbol dimensions
 plot (flowers, insects, col= "darkmagenta", pch= 24, cex= 2)
 
+#save it again
 
