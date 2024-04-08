@@ -77,7 +77,7 @@ tabout <- data.frame (class, p1992, p2006)
 tabout
 
 #plotting the output
-#nel grafico le x sono le classi e la y sono le frequenze
+#nel grafico le x sono le classi e la y sono le percentuali
 #dopo che ho finito la funzione ggplot definisco che grafico voglio, usando + e la nuova funzion geom_bar
 #1992
 ggplot (tabout, aes(x=class, y=p1992, color=class))+ geom_bar(stat="identity", fill="white")
