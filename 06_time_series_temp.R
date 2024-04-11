@@ -16,9 +16,10 @@ im.plotRGB.auto(EN01)
 im.plotRGB.auto(EN13)
 
 
+difEN = EN01[[1]]-EN13[[1]]
+cl<- colorRampPalette(c(("red", "white", "blue"))(100)
 
-
-
+            
 
 
 
