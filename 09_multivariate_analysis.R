@@ -1,0 +1,31 @@
+#Multivariate analysis
+
+library(terra)
+library(imageRy)
+library(viridis)
+
+#listiamo
+im.list()
+
+#importiamo le singole bande
+b2 <- im.import("sentinel.dolomites.b2.tif") #blue       
+b3 <- im.import("sentinel.dolomites.b3.tif") #green                    
+b4 <- im.import("sentinel.dolomites.b4.tif") #red
+b8 <- im.import("sentinel.dolomites.b8.tif") #nir
+
+#Mettiamo insieme le 4 bande per comporre un'immagine satellitare
+sentdo <- c(b2, b3, b4, b8)
+
+
+#nir on red,red on green, green on blue
+im.plotRGB(sentdo, r=4, g=3, b=2)
+
+#vediamo quanto le barre sono correlate tra loro
+pairs(sentdo)
+
+
+
+
+
+
+
