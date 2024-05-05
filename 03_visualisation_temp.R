@@ -76,7 +76,7 @@ plot(stacksent, col=clch)
 #Se voglio cancellare l'immagine plottata uso la funzione
 dev.off()
 
-#Immaginiamo di voler vedere una sola banda, ad esempio la quarta
+#Immaginiamo di voler vedere una sola banda del mio stack, ad esempio la quarta
 #ovvero quella dell'infrarosso
 #Per farlo specifico che dal mio array prendo solo il quarto oggetto 
 #mettendolo in una doppia parentesi quadra
@@ -98,9 +98,9 @@ plot(stacksent[[4]], col=clch)
 
 #Ad esempio 
 #im.plotRGB(stacksent, r=3, g=2, b=1 ) plotto l'immagine con colori naturali
-#perché so che nel mio stacksent 3 è l abanda del rosso e la lascio sul filtro rosso
+#perché so che nel mio stacksent 3 è la banda del rosso e la lascio sul filtro rosso
 #2 è la banda del verde e la lascio sul filtro verde
-#1 è l abanda blu e la lascio sul filtro blu
+#1 è la banda blu e la lascio sul filtro blu
 im.plotRGB(stacksent, 3, 2, 1 ) #per semplicità posso anche evitare di scrivere r=, g= e b=
 
 #plottiamo l'immagine con l'infrarosso al posto del rosso
