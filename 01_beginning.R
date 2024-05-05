@@ -1,6 +1,7 @@
 #Prima lezione di telerilevamento
 #Impariamo ad usare R
-#Per prima cosa associamo una funzione (molitplicazione) ad un oggetto (lettera)
+#Per prima cosa associamo una funzione (molitplicazione in questo esempio) 
+#ad un oggetto (lettera)
 a <- 6*7
 b <- 5*8
 
@@ -27,13 +28,13 @@ plot (flowers, insects)
 
 plot (flowers, insects, col= "darkmagenta")
 
-#poi posso cambiare i simboli usando pch=""
-#tra le virgolette inserisco un numero che corrisponde a un simbolo
+#poi posso cambiare i simboli usando pch=
+#e rendo pch uguale a un numero che corrisponde a un simbolo
 #(per capire che numero usare in base alsimbolo che voglio uso tabelle specifiche)
 plot (flowers, insects, col= "darkmagenta", pch= 24)
 
-#ancora posso cambiare la dimensione dei simboli
-#con cex="", tra virgolette indico di quanto voglio aumentare o diminuire il simbolo
+#ancora posso cambiare la dimensione dei simboli con cex=
+#e indico di quanto voglio aumentare o diminuire il simbolo
 plot (flowers, insects, col= "darkmagenta", pch= 24, cex= 2)
 
 #infine posso modificare il nome delle mie ascisse e ordinate
