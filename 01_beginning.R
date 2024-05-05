@@ -40,4 +40,4 @@ plot (flowers, insects, col= "darkmagenta", pch= 24, cex= 2)
 #infine posso modificare il nome delle mie ascisse e ordinate
 #faccio ciò aggiungendo xlab="" e ylab="" 
 #sempre specificando tra virgolette il nome che voglio usare
-plot (xlab="carbonati", ylab="anidride carbonica", col= "darkmagenta", pch= 24, cex= 2)
+plot (flowers, insects, xlab="carbonati", ylab="anidride carbonica", col= "darkmagenta", pch= 24, cex= 2)
