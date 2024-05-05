@@ -1,26 +1,37 @@
-#Satellite data visualisation in R by imageRy
+#Visualizziamo immagini 
 
-library(terra)
+library(terra) #richiamo i pacchetti che mi servono, senza virgolette perché li abbimao già scaricati
 library(imageRy)
 
-#List of data avialable in imageRy
+#Usiamo la funzione di imageRy im.list()
+#questa ci fornisce la lista dei dati che abbiamo che sono già caricati nel pacchetto
+#ogni funzione del pacchetto imageRy inizia con im.
 im.list()
 
-#Importing data banda del blu
-#assegno un oggetto alla mia funzione im.import
-b2<- im.import("sentinel.dolomites.b2.tif" )
-#Plotting the data
+#Importiamo un'immagine della lista con la funzione im.import("")
+#in particolare l'immagine b2 da Sentinel che è la banda che corrisponde alla lunhgezza d'onda del blu
+im.import("sentinel.dolomites.b2.tif")
+#e ora ssegniamogli un oggetto
+b2 <- im.import("sentinel.dolomites.b2.tif")
+
+#Plot
+#dopo averla importata la plottiamo per la visualizzazione
 plot(b2)
 
-#Cambiamo scala dei colori 
+#Ora possiamo cambiare la scala dei colori e lo facciamo con la funzione colorRampPalette()
+#trattandosi di più colori vado a concatenarli con la funzione concatenate c()
+#ogni colore deve essere messo tra virgolette
+#per finire la funzione specifico il numero di sfumature che voglio, nell'esempio (100)
 colorRampPalette(c("cyan4","magenta","cyan", "chartreuse"))(100)
+
 #assegniamo un oggetto alla funzione
 clch<-colorRampPalette(c("cyan4","magenta","cyan", "chartreuse"))(100)
 
-#Plotting the data
+#Plottiamo l'immagine con i nuovi colori
 plot(b2, col= clch)
 
-#Importing the additional bands 
+#Importiamo ora le altre immagini corrispondenti ad altre tre bande
+#in particolare
 #banda del verde
 b3 <- im.import("sentinel.dolomites.b3.tif")  
 plot(b3, col=clch)
@@ -31,18 +42,23 @@ plot(b4, col=clch)
 b8 <- im.import("sentinel.dolomites.b8.tif")  
 plot(b8, col=clch)
                          
-#multiframe
+#Creiamo ora un multiframe che ci permette di visualizzare tutte e 4 le immagini insieme
+#Per fare ciò usiamo la funzione par()
 #row sono le righe (2 nell'esempio) seguite dalle colonne (sempre 2) che posso scegliere io
+#le righe vanno sempre prima delle colonne in questa funzione
 #si tratta sempre di un array quindi usiamo la funzione concatenate
 par(mfrow=c(2,2))
-plot(b2, col= clch)
+
+#questa funzione crea la cornice (che nel nostro esempio è 2x2)
+#e ora dobbiamo inserire all'interno di questa cornice le nostre immagini
+#quindile plottiamo tutte e 4 di nuovo
+plot(b2, col=clch)
 plot(b3, col=clch)
 plot(b4, col=clch)
 plot(b8, col=clch)
 
-#Exercise plot the four bands one after the other in one single row
-
-par(mfrow=c(1,4))
+#Esercizio: polttare le 4 immagini in una sola righa
+par(mfrow=c(1,4)) #Essendo 4 immagini per avere una sola riga dovrò avere 4 colonne
 plot(b2, col= clch)
 plot(b3, col=clch)
 plot(b4, col=clch)
