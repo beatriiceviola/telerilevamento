@@ -64,32 +64,46 @@ im.plotRGB(m2006, r=2, g=1, b=3) #2006 on green
 im.plotRGB(m2006, r=2, g=3, b=1) #2006 on blue
 
 
-#Calculating DVI
-dvi1992 = m1992[[1]] - m1992 [[2]]
+#Calcoliamo il Difference Vegetation Index (DVI)
+#questo ci serve perché il nostro occhio può valutare solo qualitativamente 
+#la perdita di vegetazione, con questo indice lo vediamo quantitativamente
+#per ogni pixel della banda del nir sottrae lo stesso pixel della banda del red
+#dato che l'immagine è a 8 bit il DIV può variare da 255 (se nir è max e red è 0)
+#a -255 (se red è max e nir è 0)
+dvi1992 = m1992[[1]] - m1992 [[2]] 
+#qui l'uguale indica sempre un'associazione come la freccia
+#ma trattandosi di un'operazione matematica posso mettere =
 
-#plotting the DVI
+#plottiamo la DVI associandovi un vettore di colori
+#con la funzione colorRampPalette
 cl <- colorRampPalette(c("darkblue", "yellow", "red", "black"))(100)
 plot(dvi1992, col= cl)
 
-#2006
+#Calcoliamo con lo stesso procedimento la DVI anche per il 2006
 dvi2006 = m2006[[1]] - m2006 [[2]]
 
-#Exercise: plot the dvi1992 beside the dvi2006
-par(mfrow=c(1,2))
+#Plottiamola usando la stessa gamma di colori di prima
+plot(dvi2006, col=cl)
+
+#Esercizio: mettiamo vicini questi 2 risultati
+par(mfrow=c(1,2)) #1 riga, 2 colonne
 plot(dvi1992, col=cl)
 plot(dvi1006, col=cl)
 
+dev.off()
+
 #stacksent
-stackdvi <- c(dvi1992, dvi2006)
-pairs(stackdvi)
+stackdvi <- c(dvi1992, dvi2006)?????
+pairs(stackdvi)??????
 
 #Normalized DVI
-#essendo un'operazione metto = ma potevoi anche usare l'assegnazione <-
-ndvi1992 = dvi1992/(m1992[[1]]+m1992[[2]])
-
+#si usa quando ho immagini di bit diversi, ovvero andiamo a normalizzare il nostro indice di DVI
+ndvi1992 = dvi1992/(m1992[[1]]+m1992[[2]]) #sempre usare le parentesi in R per sicurezza
 ndvi2006 = dvi2006/(m2006[[1]]+m2006[[2]])
 
 dev.off()
+
+#poi posso sempre fare un multiframe per confrontarle
 par(mfrow= c(1,2))
 plot(ndvi1992, col=cl)
 plot(ndvi2006, col=cl)
