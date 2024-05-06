@@ -60,7 +60,7 @@ tot1992
 
 #Ora per avere la proporzione vera e propria faccimao la frequenza diviso il totale
 prop1992 = f1992/tot1992
-prop1992 #la colonna count è quella che ci interessa????????
+prop1992 #la colonna count è quella che ci interessa
 
 #Per avere le percentuali moltiplico la mia proporzione per 100
 perc1992 = prop1992 * 100
@@ -90,8 +90,8 @@ perc2006
 #In particolare creiamo 3 vettori, ognuno di questi vettori diventerà
 #una colonna nella nostra tabella
 class <- c("forest", "human") # la prima colonna è la classe
-p1992 <- c(83, 17) #la seconda è il 1992
-p2006 <- c(45, 55) #la terza colonna è il 2006
+p1992 <- c(83, 17) #la seconda sono i valori percentuali del 1992 per ogni classe
+p2006 <- c(45, 55) #la terza colonna sono i valori percentuali del 2006 per ogni classe
 
 #ora creiamo il vero e proprio dataframe mettendo insieme i 3 vettori
 #uso la funzione data.frame()
@@ -101,9 +101,12 @@ tabout #richiamandola visualizzo la tabella
 #Ora facciamo un grafico grazie al pacchetto ggplot
 #Partiamo dall'immagine del 1992
 #nell'argomento della funzione ggplot specifico per primo argomento la tabella da plottare
-#poi le aesthetics, ovvero a cosa corrisponde la x (classi), la y (valori del 1992????) e il colore che voglio
-#dopo che ho finito la funzione ggplot definisco che grafico voglio, usando + e la nuova funzion geom_bar
-#all'interno dell'argomento di geom_bar stat="identity" significa che prendo il valore esatto che gli sto dando
+#poi le aestetics, ovvero a cosa corrisponde la x (classi), 
+#la y (valori percentuali del 1992) e il colore che voglio
+#dopo che ho finito la funzione ggplot definisco che grafico voglio
+#usando + e la nuova funzion geom_bar
+#all'interno dell'argomento di geom_bar stat="identity" significa che 
+#prendo il valore esatto che gli sto dando
 #mentre fill="" ci permette di scegliere il colore che voglio usare
 #1992
 ggplot (tabout, aes(x=class, y=p1992, color=class))+ geom_bar(stat="identity", fill="white")
