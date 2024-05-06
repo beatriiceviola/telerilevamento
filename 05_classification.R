@@ -98,28 +98,37 @@ p2006 <- c(45, 55) #la terza colonna è il 2006
 tabout <- data.frame (class, p1992, p2006)
 tabout #richiamandola visualizzo la tabella
 
-#plotting the output
-#nel grafico le x sono le classi e la y sono le percentuali
+#Ora facciamo un grafico grazie al pacchetto ggplot
+#Partiamo dall'immagine del 1992
+#nell'argomento della funzione ggplot specifico per primo argomento la tabella da plottare
+#poi le aesthetics, ovvero a cosa corrisponde la x (classi), la y (valori del 1992????) e il colore che voglio
 #dopo che ho finito la funzione ggplot definisco che grafico voglio, usando + e la nuova funzion geom_bar
+#all'interno dell'argomento di geom_bar stat="identity" significa che prendo il valore esatto che gli sto dando
+#mentre fill="" ci permette di scegliere il colore che voglio usare
 #1992
 ggplot (tabout, aes(x=class, y=p1992, color=class))+ geom_bar(stat="identity", fill="white")
 #2006
 ggplot (tabout, aes(x=class, y=p2006, color=class))+ geom_bar(stat="identity", fill="white")
 
 
-#install.packages(patchwork)
+#Installiamo ora un nuovo pacchetto
+#Il pacchetto patchwork ci permette di unire i due grafici
+install.packages(patchwork)
+library(patchwork) #lo richiamiamo per vedere se è avvenuta l'installazione
 
-library(patchwork)
-
-#patchwork
+#Associo un oggetto ad entrambi i grafici creati prima
 p1 <- ggplot (tabout, aes(x=class, y=p1992, color=class))+ geom_bar(stat="identity", fill="white")
 p2 <- ggplot (tabout, aes(x=class, y=p2006, color=class))+ geom_bar(stat="identity", fill="white")
-p1+p2
+p1+p2 #sommando in questo modo i due grafici li metto uno affianco all'altro, ma la scala dei 2 è diversa
+#se avessi voluto metterli uno sopra l'altro avrei fatto p1/p2
 
-#i due grafici però non sono in scala, quindi per metterli in scala facciamo
+#Quindi cosa facciamo per metterli in scala?
+#metto alla y un limite usando ylim
+#in questo modo specifico che per ambedue i miei grafici la y deve andare da 0 a 100
+#serve c() perché sono due valori, e uso il 100 perché si tratta di percentuali
 p1 <- ggplot (tabout, aes(x=class, y=p1992, color=class))+ geom_bar(stat="identity", fill="white")+ ylim (c(0,100))
 p2 <- ggplot (tabout, aes(x=class, y=p2006, color=class))+ geom_bar(stat="identity", fill="white")+ ylim (c(0,100))
-p1+p2
+p1+p2 #ora mettendo i 2 grafici vicini posso effettivamente valutare la perdita di foresta
 
 
 
