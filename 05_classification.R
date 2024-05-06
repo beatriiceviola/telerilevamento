@@ -1,6 +1,6 @@
 #Quantifying land cover change
 
-#Installiamo i oacchetti che ci servono
+#Installiamo i pacchetti che ci servono
 install.packages("ggplot2") #ggplot2 ci permette di fare dei grafici più belli
 
 #Chiamiamoli con la funzionelibrary 
