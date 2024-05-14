@@ -1,0 +1,154 @@
+\documentclass[12pt]{article} % settiamo il tipo di documento che stiamo facendo con dimensione del carattere a 12
+
+\usepackage{graphicx} % Il pacchetto permette di caricare delle immagini
+\usepackage{hyperref} % Permette di inserire collegamenti all'interno del testo
+\usepackage{natbib} % permette di gestire la bibliografia 
+\usepackage{lineno} % numera le righe del testo
+% i pacchetti sempre all'inizio
+% \ sono le funzioni che hanno {}, dentro queste metti gli argomenti. [] stanno a significare modifiche strutturali.
+
+\linenumbers % numera le righe del testo
+
+% inizo del mio documento
+
+\title{My first LaTeX doc - Pazza Inter}
+\author{Filippo Paganelli}
+\date{10 Maggio 2024} % permette di cambiare l'impostazione della data a seconda degli argomenti che vengono passati. Se non è presente, pesca direttamente la data dal sistema impostandola come mm/gg/aa. 
+
+\begin{document} % dopo un begin ci deve essere sempre un end che chiuda l'operazione
+
+\maketitle % prende i pezzi scritti sopra begin e li scrive nel documento
+\tableofcontents % mi genera il mio indice automaticamente considerando le sezioni che io faccio durante il documento
+
+%Per fare l'abstract
+
+\begin{abstract}
+   Lo sai per un gol
+Io darei la vita, la mia vita
+In fondo lo so
+Sarà una partita infinita
+È un sogno però
+È un coro che sale a sognare
+E giù dalla Nord
+Novanta minuti per segnare
+Neroazzurri
+Noi saremo qui, neroazzurri
+Pazzi come te, neroazzurri
+Non fateci soffrire
+Ma va bene, vinceremo insieme
+Amala
+Pazza Inter, amala
+È una gioia infinita
+Che dura una vita
+Pazza Inter, amala
+\end{abstract}
+
+\bigskip % mi lascia uno spazio più grande, si potrebbe fare anche con \\
+% \smallskip mi lascia uno spazio più piccolo
+
+\textit{Keywords}: Inter, Pazza, Calcio % Per mettere le parole chiave del mio articolo
+
+\section{Introduction} % mi crea una nuova sezione del documento
+\label{sec:intro} % assegno un'etichetta alla sezione per richiamarla nel testo con \ref{} - \label viene utilizzato per poter richiamare con \ref
+% nel caso in cui si sbagli il nome della sezione compariranno dei ?? nella porzione in cui richiamo la \ref{}. Ciò permette di poter cercare eventuali errori all'interno del testo in modo più semplice.
+% per togliere il numero della sezione basta bettere un * prima delle {}. *{}
+
+\textbf{Capitan Zanetti} - \textb mette in grassetto la parte di testo passata come argomento. bold
+\textit{è gol è gol è gol} - \textit formatta il testo passato come argomento in corsivo. italic
+
+Vivila Questa storia vivila Può durare una vita
+Una sola partita Pazza Inter, amala
+E continuerò Nel sole e nel vento la mia festa
+E sempre vivrò (e sempre vivrò) Questi colori... nella testa
+Neroazzurri Io vi seguirò, neroazzurri
+Sempre lì vivrò, nerazzurri Questa mia speranza
+È l'essenza, io non vivo senza
+Amala Pazza Inter, amala
+È una gioia infinita Che dura una vita
+Pazza Inter, amala
+\cite{Aloisi23} % cito una delle lables della mia bibliografia
+\citep{Aloisi23} % citare la biblio tra parentesi
+\citet{LaLoggia2024} % citare la biblio come testo con solo l'anno tra parentesi
+\smallskip
+
+\footnote{Source: F.C. Internazionale} % per inserire note a pie di pagina
+
+la canzone la trovi a:
+\url{https://www.youtube.com/watch?v=2a1Ij1t-ltg} % link alla pagina di riferimento
+
+\section{Methods} % apro una nuova sezione
+
+\subsection{Study Area} % posso creare delle sottosezioni
+\subsection{Algoritms}
+
+% Per scrivere un'equazione
+% Cerca sul web LaTeX Math per cercare tutte le varie funzioni
+
+Prima abbiamo usato la seguente equazione \ref{eq:sum}: % richiamo l'equazione che creo qui sotto
+
+\begin{equation} % creo l'equazione
+    T = \sum p_i % \sum inserisce il simbolo della sommatoria
+\label{eq:sum} % Attribuiamo un'etichetta alla eq. per fare i riferimenti
+\end{equation} % Fine dell'equazione
+
+% altra equazione
+In questa tesi abbiamo usato un'equazione \ref{eq:newton}:
+\begin{equation}
+    F = \sqrt{G \frac{m_1\times m_2}{d^2}} % \sqrt per mettere sotto radice
+    % [] è la potenza della radice. _ serve per il pedice. \times{} è la funzione per la moltiplicazione. \frac{} è la funzione per la frazione.
+\label{eq:newton}
+\end{equation}
+
+\section{Results}
+Milan 1 - 2 Inter, 22 Aprile 2024, 20° scudetto, seconda stella.
+
+\section{Discussion}
+I risultati ottenuti, come abbiamo visto nella sezione \ref{sec:intro} % richiamo la lable della sezione into
+
+In questa tesi abbiamo osservato:
+\begin{itemize} % Per fare un elenco puntato classico metto come argomento itemize
+    \item Inno dell'inter
+    \item Pazza Inter
+    \item Juve m
+\end{itemize} % chiudo sempre il begin che ho iniziato
+
+\begin{enumerate} %Per fare un elenco numerato utilizzo enumerate
+    \item Inno dell'inter
+    \item Pazza Inter
+    \item Juve m
+\end{enumerate}
+
+\newpage % andiamo ad una pagina nuova
+
+% aggiungiamo un'immagine
+
+\begin{figure}
+    \centering % per centrare la figura nel foglio
+    \includegraphics[width=\textwidth]{inter.png} % [] così l'immagine viene larga quanto il testo. Se volessimo farlo la metà, basterebbe scrivere width=0.5, quindi moltiplicare per un fattore di riduzione. L'immagine la devi avere scaricata sul pc.
+    \caption{Stemma dell'Inter} % didascalia dell'immagine
+    \label{fig:chagall} % sempre per poterla richiamare nel testo
+\end{figure}
+
+\newpage
+% facciamo la bibliografia
+\begin{thebibliography}{999} % è un tipo di bibliografia
+    
+    \bibitem[Aloisi, 2023]{Aloisi23} % [] come voglio che appaia nel testo, {} è la lable per richiamarlo nel testo.
+    Aloisi, I., Cai, G., Serafini-Fracassini, D., \& Del Duca, S. (2016). Polyamines in pollen: from microsporogenesis to fertilization. Frontiers in plant science, 7, 180280. % copiamo e incolliamo il secondo punto da cite di G Scholar.
+    
+    \bibitem[La Loggia, 2024]{LaLoggia2024}
+    La Loggia, O. (2024). Developmental Influences on Social Competence and Neuroplasticity: The Impact of Early Social Complexity in a Cooperatively Breeding Fish (Doctoral dissertation, Institute of Ecology).
+
+\end{thebibliography}
+
+\newpage
+
+% facciamo un box
+\hline % disegna una horizontal line
+\bigskip
+lascia uno spazio tra la riga e il testo.
+\textbf{Lautaro Martinez}
+\bigskip
+\hline % chiudo il box disegnando un'altra linea
+
+\end{document} % fondamentale, ci vuole sempre alla fine
