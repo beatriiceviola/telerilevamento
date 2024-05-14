@@ -35,88 +35,96 @@ Grab a brush and put a little make-up, you wanted to
 Hide the scars to fade away the shake-up, you wanted to
 Why'd you leave the keys upon the table? You wanted to
 \end{abstract}
+% se non mi piace lo spazio che si crea in automatico all'interno dei paragrafi
+%posso usare la funzione \noindent{}
 
 \bigskip % questa funzione serve per lasciare uno spazio più grande, si potrebbe fare anche con \\
 % \smallskip mi lascia uno spazio più piccolo
 
+%La funzione \textit mette il testo in corsivo
 \textit{Keywords}: Music, Metal, Love % Per mettere le parole chiave del mio articolo
 
-\section{Introduction} % mi crea una nuova sezione del documento
-\label{sec:intro} % assegno un'etichetta alla sezione per richiamarla nel testo con \ref{} - \label viene utilizzato per poter richiamare con \ref
-% nel caso in cui si sbagli il nome della sezione compariranno dei ?? nella porzione in cui richiamo la \ref{}. Ciò permette di poter cercare eventuali errori all'interno del testo in modo più semplice.
-% per togliere il numero della sezione basta bettere un * prima delle {}. *{}
+\section{Introduction} % Crea una nuova sezione del documento, l'introduzione in questo caso
+\label{sec:intro} % assegno un'etichetta alla sezione così ogni volta che voglio richiamarla posso farlo con la fuznione \ref{} 
+% Se sbaglio il nome della sezione compariranno dei ?? nella porzione in cui richiamo la \ref{}
+%In questo modo posso valutare molto velocemente se sono presenti errori
+%Per togliere il numero della sezione basta bettere un asterisco * prima delle parentesi graffe {}. 
 
-\textbf{Capitan Zanetti} - \textb mette in grassetto la parte di testo passata come argomento. bold
-\textit{è gol è gol è gol} - \textit formatta il testo passato come argomento in corsivo. italic
+\textbf{I don't think you trust} - \textb mette il suo argomento dentro le graffe in grassetto
+In my self-righteous suicide
+I cry when angels deserve to die
+In my self-righteous suicide
+I cry when angels deserve to die
 
-Vivila Questa storia vivila Può durare una vita
-Una sola partita Pazza Inter, amala
-E continuerò Nel sole e nel vento la mia festa
-E sempre vivrò (e sempre vivrò) Questi colori... nella testa
-Neroazzurri Io vi seguirò, neroazzurri
-Sempre lì vivrò, nerazzurri Questa mia speranza
-È l'essenza, io non vivo senza
-Amala Pazza Inter, amala
-È una gioia infinita Che dura una vita
-Pazza Inter, amala
-\cite{Aloisi23} % cito una delle lables della mia bibliografia
-\citep{Aloisi23} % citare la biblio tra parentesi
-\citet{LaLoggia2024} % citare la biblio come testo con solo l'anno tra parentesi
+%Citare la bibliografia dentro al testo
+\cite{Milana2010} % cito normalmente la mia bibliografia
+\citep{Milana2010} % cito la mia bibliografia mettendo sia nome che anno tra parentesi
+\citet{LaLoggia2024} % cito la mia bibliografia mettendo solo l'anno tra parentesi mentre il nome fuori
+%questo viene fatto ad esempio quando inizio il testo con una citazione, es. Milana (2010) ci disse che i Barbagianni...
 \smallskip
 
-\footnote{Source: F.C. Internazionale} % per inserire note a pie di pagina
+\footnote{Grab a brush and put a little make-up} % La funzione per inserire note a piè di pagina
 
+%Per inserire un link dentro al nostro documento uso la funzione \url{}
 la canzone la trovi a:
-\url{https://www.youtube.com/watch?v=2a1Ij1t-ltg} % link alla pagina di riferimento
+\url{https://www.youtube.com/watch?v=CSvFpBOe8eY&themeRefresh=1} 
 
-\section{Methods} % apro una nuova sezione
+%Andiamo alla pagina dopo per essere più ordinati, usiamo la seguente funzion
+\newpage{} 
 
-\subsection{Study Area} % posso creare delle sottosezioni
-\subsection{Algoritms}
+%Nuova sezione: Metodi
+\section{Methods} 
+%Posso anche creare delle sottosezioni
+\subsection{Study Area} % Come l'area di studio
+\subsection{Algoritms} % O anche gli algoritmi
 
-% Per scrivere un'equazione
-% Cerca sul web LaTeX Math per cercare tutte le varie funzioni
+% Scriviamo un'equazione
+% Sul web LaTeX Math possiamo trovare le diverse funzioni che potrebbero servirci
+Prima abbiamo calcolato l'indice di dominanza di Simpson per popolazioni teoricamente infinite:
 
-Prima abbiamo usato la seguente equazione \ref{eq:sum}: % richiamo l'equazione che creo qui sotto
-
-\begin{equation} % creo l'equazione
-    T = \sum p_i % \sum inserisce il simbolo della sommatoria
-\label{eq:sum} % Attribuiamo un'etichetta alla eq. per fare i riferimenti
-\end{equation} % Fine dell'equazione
+\ref{eq:somma}: %richiamo l'equazione che vado a creare qui sotto 
+\begin{equation} %inzio l'equazione
+\lambda= \sum_{i=1}^{S}p_i %\sum inserisce il simbolo sommatoria da i=1 a S (conil trattino basso p_i metto la i al pedice di p)
+    \label{eq:somma}: %Creo un'etichetta per la mia equazione che ho richiamato sopra con \ref
+\end{equation} %finisco l'equzione
 
 % altra equazione
-In questa tesi abbiamo usato un'equazione \ref{eq:newton}:
+Poi si è usata la seguente equazione
+ref{eq:newton}: 
 \begin{equation}
-    F = \sqrt{G \frac{m_1\times m_2}{d^2}} % \sqrt per mettere sotto radice
-    % [] è la potenza della radice. _ serve per il pedice. \times{} è la funzione per la moltiplicazione. \frac{} è la funzione per la frazione.
+    F = \sqrt[2]{G \frac{m_1\times m_2}{d^2}} % \sqrt per mettere sotto radice,[2] mi indica la potenza della radice, \frac è la frazione
+    %con numeratore e denominatore tra parentesi graffe{}
+    % l'accento circonflesso ^ serve a mettere d al quadrato
+    %\times{} è la funzione per la moltiplicazione
 \label{eq:newton}
 \end{equation}
 
 \section{Results}
-Milan 1 - 2 Inter, 22 Aprile 2024, 20° scudetto, seconda stella.
 
 \section{Discussion}
-I risultati ottenuti, come abbiamo visto nella sezione \ref{sec:intro} % richiamo la lable della sezione into
+Possiamo discutere i risultati, come abbiamo visto \ref{sec:intro} % richiamo l'etichetta, lable, della sezione Introduzione
 
+
+%Facciamo un classico elenco puntato con la funzione \begin{itemize}
 In questa tesi abbiamo osservato:
-\begin{itemize} % Per fare un elenco puntato classico metto come argomento itemize
-    \item Inno dell'inter
-    \item Pazza Inter
-    \item Juve m
-\end{itemize} % chiudo sempre il begin che ho iniziato
+\begin{itemize}
+    \item Musica
+    \item Astronauti
+    \item Barbagianni
+\end{itemize} % il begin deve sempre essere accompagnato da un end
 
-\begin{enumerate} %Per fare un elenco numerato utilizzo enumerate
-    \item Inno dell'inter
-    \item Pazza Inter
-    \item Juve m
+%Per fare un elenco puntato numerato uso l afunzione \begin{enumerate}
+\begin{enumerate} 
+    \item Musica
+    \item Astronauti
+    \item Barbagianni
 \end{enumerate}
 
 \newpage % andiamo ad una pagina nuova
 
-% aggiungiamo un'immagine
-
+%Andiamo ad aggiungere un'immagine
 \begin{figure}
-    \centering % per centrare la figura nel foglio
+    \centering % Per centrare la figura nel foglio
     \includegraphics[width=\textwidth]{inter.png} % [] così l'immagine viene larga quanto il testo. Se volessimo farlo la metà, basterebbe scrivere width=0.5, quindi moltiplicare per un fattore di riduzione. L'immagine la devi avere scaricata sul pc.
     \caption{Stemma dell'Inter} % didascalia dell'immagine
     \label{fig:chagall} % sempre per poterla richiamare nel testo
