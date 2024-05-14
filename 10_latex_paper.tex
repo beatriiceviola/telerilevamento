@@ -129,15 +129,20 @@ In questa tesi abbiamo osservato:
 %Se volessi l'immagine più pccola del testo metterei width=0.5 ecc...
 %per inserire un'immagine questa deve essere stata scaricata sul computer
     \caption{Apodemus sylvaticus} % Didascalia dell'immagine
-    \label{fig:chagall} % sempre per poterla richiamare nel testo
+    
+% Creiamo un label sempre per poter richiamare la figura in altri punti del testo
+\label{fig:apodemus} 
 \end{figure}
 
-\newpage
-% facciamo la bibliografia
+\newpage %andiamo alla pagina dopo
+
+% Creiamo la bibliografia
 \begin{thebibliography}{999} % è un tipo di bibliografia
-    
-    \bibitem[Aloisi, 2023]{Aloisi23} % [] come voglio che appaia nel testo, {} è la lable per richiamarlo nel testo.
-    Aloisi, I., Cai, G., Serafini-Fracassini, D., \& Del Duca, S. (2016). Polyamines in pollen: from microsporogenesis to fertilization. Frontiers in plant science, 7, 180280. % copiamo e incolliamo il secondo punto da cite di G Scholar.
+%con la funzione \bibitem creo una sorta di label per richiamare la biblio nel testo
+%Le parentesi quadre [] mi dicono come appare nel testo quando lo cito
+%Le parentesi graffe {} mi dicono il lable che uso per richiamarlo nel testo
+\bibitem[Milana, 2010]{Milana2010}  
+Aloisi, I., Cai, G., Serafini-Fracassini, D., \& Del Duca, S. (2016). Polyamines in pollen: from microsporogenesis to fertilization. Frontiers in plant science, 7, 180280. % copiamo e incolliamo il secondo punto da cite di G Scholar.
     
     \bibitem[La Loggia, 2024]{LaLoggia2024}
     La Loggia, O. (2024). Developmental Influences on Social Competence and Neuroplasticity: The Impact of Early Social Complexity in a Cooperatively Breeding Fish (Doctoral dissertation, Institute of Ecology).
