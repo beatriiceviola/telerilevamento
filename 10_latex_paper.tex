@@ -1,52 +1,45 @@
-\documentclass[12pt]{article} % settiamo il tipo di documento che stiamo facendo con dimensione del carattere a 12
+%Per prima cosa indichiamo il tipo di documento che stiamo facendo e la dimensione del carattere a 12
+\documentclass[12pt]{article}
 
-\usepackage{graphicx} % Il pacchetto permette di caricare delle immagini
-\usepackage{hyperref} % Permette di inserire collegamenti all'interno del testo
-\usepackage{natbib} % permette di gestire la bibliografia 
-\usepackage{lineno} % numera le righe del testo
-% i pacchetti sempre all'inizio
-% \ sono le funzioni che hanno {}, dentro queste metti gli argomenti. [] stanno a significare modifiche strutturali.
+%Poi mettiamo sempre all'inizio i pacchetti che ci serviranno
+\usepackage{graphicx} % Ci permette di caricare delle immagini
+\usepackage{hyperref} % Ci permette di inserire collegamenti all'interno del testo
+\usepackage{natbib} % Ci permette di gestire la bibliografia 
+\usepackage{lineno} % Numera le righe del testo
+% Il backslash ci indica l'inizio di una funzione \
+% Gli argomenti delle funzioni è inserito dentro le parentesi graffe {}
+% Le parentesi quadre [] ci indicano modifiche strutturali.
 
-\linenumbers % numera le righe del testo
+\linenumbers % funzione che numera le righe del testo
 
-% inizo del mio documento
+% Inizo del mio documento, metto il titolo l'autore e la data
 
-\title{My first LaTeX doc - Pazza Inter}
-\author{Filippo Paganelli}
-\date{10 Maggio 2024} % permette di cambiare l'impostazione della data a seconda degli argomenti che vengono passati. Se non è presente, pesca direttamente la data dal sistema impostandola come mm/gg/aa. 
+\title{My first LaTeX doc - Chop Suey!}
+\author{Beatrice Viola}
+\date{10 Maggio 2024} % permette di cambiare l'impostazione della data a seconda degli argomenti che vengono passati. Se non è presente, pesca direttamente la data dal sistema impostandola come mm/gg/aa. ????????
 
-\begin{document} % dopo un begin ci deve essere sempre un end che chiuda l'operazione
+\begin{document} % dopo un begin ci deve essere sempre un end che serve per chiudere l'operazione
 
-\maketitle % prende i pezzi scritti sopra begin e li scrive nel documento
-\tableofcontents % mi genera il mio indice automaticamente considerando le sezioni che io faccio durante il documento
+\maketitle % Con questa funzione le parti scritte sopra begin vengono inserite nel documento
+\tableofcontents % Genera l'indice automaticamente considerando le sezioni che inserisco io
+%se poi voglio aggiungere una sezione posso farlo e questa funzione la aggiunge automaticamente
 
-%Per fare l'abstract
-
+%Facciamo l'abstract
 \begin{abstract}
-   Lo sai per un gol
-Io darei la vita, la mia vita
-In fondo lo so
-Sarà una partita infinita
-È un sogno però
-È un coro che sale a sognare
-E giù dalla Nord
-Novanta minuti per segnare
-Neroazzurri
-Noi saremo qui, neroazzurri
-Pazzi come te, neroazzurri
-Non fateci soffrire
-Ma va bene, vinceremo insieme
-Amala
-Pazza Inter, amala
-È una gioia infinita
-Che dura una vita
-Pazza Inter, amala
+ Wake up (wake up)
+Grab a brush and put a little make-up
+Hide the scars to fade away the shake-up (hide the scars to fade away the-)
+Why'd you leave the keys upon the table?
+Here you go create another fable, you wanted to
+Grab a brush and put a little make-up, you wanted to
+Hide the scars to fade away the shake-up, you wanted to
+Why'd you leave the keys upon the table? You wanted to
 \end{abstract}
 
-\bigskip % mi lascia uno spazio più grande, si potrebbe fare anche con \\
+\bigskip % questa funzione serve per lasciare uno spazio più grande, si potrebbe fare anche con \\
 % \smallskip mi lascia uno spazio più piccolo
 
-\textit{Keywords}: Inter, Pazza, Calcio % Per mettere le parole chiave del mio articolo
+\textit{Keywords}: Music, Metal, Love % Per mettere le parole chiave del mio articolo
 
 \section{Introduction} % mi crea una nuova sezione del documento
 \label{sec:intro} % assegno un'etichetta alla sezione per richiamarla nel testo con \ref{} - \label viene utilizzato per poter richiamare con \ref
