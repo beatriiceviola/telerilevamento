@@ -1,0 +1,127 @@
+\documentclass{beamer} % la classe per le presentazioni
+\usepackage{graphicx} % Required for inserting images
+
+% \usepackage{listings} permette di inserire pezzi di codice salvati
+
+% cerca : Beamer themes and colors, colonna a sx hai i theme e in riga in alto i colori
+\usetheme{Hannover} % struttura della presentazione {Dresden è carina}
+\usecolortheme{crane} % colore della presentazione
+% duccio usa {Frankfurt} e {dove} , molto pulito
+
+\title{Presentazione di Latex}
+\author{Filippo Paganelli} % relatore
+\date{May 2024}
+
+\begin{document}
+
+\maketitle
+
+% dopo il \maketitle, ad ogni nuova sezione fai queste cose:
+\AtBeginSection[]
+{
+\begin{frame}{Outline}
+\tableofcontents[currentsection]
+\end{frame}
+}
+
+\section{Introduction}
+
+% le slide si chiamano frame
+\begin{frame}{My first slide} % titolo in cima
+    here i am inserting my text
+\end{frame}
+
+% meglio evitare inserire tanto testo, piuttosto elenchi puntati per inserire info
+\begin{frame}{Itemize}
+the presentation will be on:
+    \begin{itemize} % elenco puntato
+        \item my first film
+        \item \pause my second % con \pause mi appaiono nella slide sucessiva (è tipo un'animazione un po' più grezza)
+        \item \pause bla bla bla
+    \end{itemize}
+\end{frame}
+
+% cerchi su G le funzioni per cambiare la formattazione del testo (\tiny, \huge...)
+\begin{frame}{Text dimension} % cambiare dimensione
+    \scriptsize{here i am inserting my text}
+\end{frame}
+
+\begin{frame}{4} 
+    \textit{dajeeee}\\ % per andare a capo \\
+    \textbf{caio} bello\\
+    \bigskip % per lasciare spazio più ampio tra una frase e l'altra
+    volevo scrivere \textbf{ciao} % è bene scrivere le parole principali in grassetto
+\end{frame}
+
+\section{formulas}
+
+\begin{frame}{Algotitms used} % cerca su G: latex math wiki
+In this work I used the following formula:
+\bigskip
+\begin{equation}
+    \delta = \sqrt{\frac{\displaystyle\sum_{i=1}^{N}{(x - \mu)^2}}{N}}
+    % \frac : il primo è il num e la seconda {} è il denom
+    % \sum : mi mette il simbolo di sommatoria, se voglio mettere i=1 fino ad N, metto _{}^{}. se prima scrivo \displaystyle mi mette i e N sopra e sotto il simbolo 
+    % \sqrt : square root
+    % \mu : mi mette il simbolo
+    % \delta : simbolo della sd
+\end{equation}
+    
+\end{frame}
+
+\section{Results} % sezione dei risultati
+
+\begin{frame}{main results}
+
+\begin{figure} % non lo scrivi a mano, ma dai puntini in alto a dx fai instert image
+    \centering % mi centra il grafico
+    \includegraphics[width=0.8\linewidth]{Screenshot 2024-05-08 alle 17.37.06.png} % 0.8 perchè se cambi un attimo lo stile della pres potrebbe sminchiare
+   % \caption{negative correlation} solitamente la caption non si usa nelle presentazioni
+    \label{fig:enter-label} % anche questa non serve
+\end{figure}
+    
+\end{frame}
+
+% voglio inserire 2 immagini accanto
+\begin{frame}{main results}
+\begin{figure} % non lo scrivi a mano, ma dai puntini in alto a dx fai instert image
+    \centering % mi centra il grafico
+    \includegraphics[width=0.4\linewidth]{Screenshot 2024-05-08 alle 17.37.06.png} 
+    \pause \includegraphics[width=0.4\linewidth]{Screenshot 2024-05-08 alle 17.37.06.png} 
+\end{figure} % le lascio nello stesso \begin
+
+% per metterle una sopra l'altra faccio 2 begin
+\end{frame}
+
+% 4 immagini
+\begin{frame}{4 figure}
+\begin{figure} % non lo scrivi a mano, ma dai puntini in alto a dx fai instert image
+    \centering % mi centra il grafico
+    \includegraphics[width=0.3\linewidth]{Screenshot 2024-05-08 alle 17.37.06.png} 
+    \includegraphics[width=0.3\linewidth]{Screenshot 2024-05-08 alle 17.37.06.png} \\ % vado a capo
+    \includegraphics[width=0.3\linewidth]{Screenshot 2024-05-08 alle 17.37.06.png} 
+    \includegraphics[width=0.3\linewidth]{Screenshot 2024-05-08 alle 17.37.06.png} \\ % mi va a capo, se uso bigskip dopo posso anche ometterla
+\end{figure}
+
+% piccolo testo per sapere da dove ho preso l'immagine
+\bigskip % spazio più ampio
+\centering % per centrare il mio testo
+\scriptsize{Paganelli et al. (2024)} % per conformità nella presentazione, se metti delle citazioni o usi tutte scriptsize o no
+\end{frame}
+
+% questa parte non funziona ma va bene, guarda su Git di duccio
+\begin{frame}{Columns} % per mettere di fianco text e immagine
+
+    \begin{columns}
+% creo la prima colonna
+    \begin{column}{width=0.5\textwidth}
+        \includegraphics[width=0.4\linewidth]{Screenshot 2024-05-08 alle 17.37.06.png}       
+    \end{column}
+% creo la seconda
+    \begin{column}{width=0.5\textwidth}
+        small text here
+    \end{column}
+    \end{columns}
+\end{frame}
+
+\end{document}
