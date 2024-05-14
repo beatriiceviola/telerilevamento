@@ -57,9 +57,9 @@ In my self-righteous suicide
 I cry when angels deserve to die
 
 %Citare la bibliografia dentro al testo
-\cite{Milana2010} % cito normalmente la mia bibliografia
-\citep{Milana2010} % cito la mia bibliografia mettendo sia nome che anno tra parentesi
-\citet{LaLoggia2024} % cito la mia bibliografia mettendo solo l'anno tra parentesi mentre il nome fuori
+\cite{Milana2013} % cito normalmente la mia bibliografia
+\citep{Milana2013} % cito la mia bibliografia mettendo sia nome che anno tra parentesi
+\citet{Milana2013} % cito la mia bibliografia mettendo solo l'anno tra parentesi mentre il nome fuori
 %questo viene fatto ad esempio quando inizio il testo con una citazione, es. Milana (2010) ci disse che i Barbagianni...
 \smallskip
 
@@ -139,24 +139,24 @@ In questa tesi abbiamo osservato:
 % Creiamo la bibliografia
 \begin{thebibliography}{999} % è un tipo di bibliografia
 %con la funzione \bibitem creo una sorta di label per richiamare la biblio nel testo
+%Le parentesi graffe {} il nome del label per richiamarlo nel testo
 %Le parentesi quadre [] mi dicono come appare nel testo quando lo cito
-%Le parentesi graffe {} mi dicono il lable che uso per richiamarlo nel testo
-\bibitem[Milana, 2010]{Milana2010}  
-Aloisi, I., Cai, G., Serafini-Fracassini, D., \& Del Duca, S. (2016). Polyamines in pollen: from microsporogenesis to fertilization. Frontiers in plant science, 7, 180280. % copiamo e incolliamo il secondo punto da cite di G Scholar.
-    
-    \bibitem[La Loggia, 2024]{LaLoggia2024}
-    La Loggia, O. (2024). Developmental Influences on Social Competence and Neuroplasticity: The Impact of Early Social Complexity in a Cooperatively Breeding Fish (Doctoral dissertation, Institute of Ecology).
+\bibitem[Milana, 2013]{Milana2013}  
+% Da Google Scholar prendiamo l'articolo che ci interessa e prendiamo da "cita" la bibliografia APA
+Milana, G. (2013). Variazioni temporali nella struttura di vertebratocenosi nei Monti della Tolfa: influenza di cambiamenti climatici e impatto antropico. 
 
+%Creiamone un'altra 
+\bibitem[Pruscini, 2009]{Pruscini2009}
+PRUSCINI, F., FLORENZANO, G. T., & BUVOLI, L. (2009). La banca dati mito2000 come strumento per prevedere gli effetti dei cambiamenti climatici sulle specie comuni nidificanti. Alula, 16, 312-314.
 \end{thebibliography}
 
 \newpage
 
-% facciamo un box
-\hline % disegna una horizontal line
-\bigskip
-lascia uno spazio tra la riga e il testo.
-\textbf{Lautaro Martinez}
-\bigskip
-\hline % chiudo il box disegnando un'altra linea
+%Posso anche creare un box
+\hline % Disegna una linea orizzontale
+\bigskip %per lasciare uno spazio grande dal testo, quindi non resta attaccata a questo
+\textbf{IMPORTANT} %mettiamo la scxritta in grassetto
+\bigskip %sempre per fare in modo che la linea inferiore non sia attaccata al testo
+\hline % Finisco il box creando un'altra linea orizzontale inferiore
 
 \end{document} % fondamentale, ci vuole sempre alla fine
