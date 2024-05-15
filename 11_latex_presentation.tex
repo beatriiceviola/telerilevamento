@@ -1,22 +1,23 @@
-\documentclass{beamer} % la classe per le presentazioni
-\usepackage{graphicx} % Required for inserting images
+% Iniziamo l anostra presentazione con la funzione \documentclass{beamer}
+\documentclass{beamer} 
+\usepackage{graphicx} % Installiamo il pacchetto necessario per inserire immagini
 
-% \usepackage{listings} permette di inserire pezzi di codice salvati
+% \usepackage{listings} Questo pacchetto ci permette di inserire parti di codice salvate
 
-% cerca : Beamer themes and colors, colonna a sx hai i theme e in riga in alto i colori
-\usetheme{Hannover} % struttura della presentazione {Dresden è carina}
-\usecolortheme{crane} % colore della presentazione
-% duccio usa {Frankfurt} e {dove} , molto pulito
+% Cercando "Beamer themes and colors" possiamo vedere i temi a sinistra i colori sulla riga in alto 
+\usetheme{Hannover} % Diamo la struttura allla presentazione 
+\usecolortheme{crane} % Diamo il colore alla presentazione, anche {dove} è carino
 
+%Procediamo con la nostra presentazione aggiungendo titolo, relatore e data
 \title{Presentazione di Latex}
-\author{Filippo Paganelli} % relatore
+\author{Beatrice Viola} 
 \date{May 2024}
 
-\begin{document}
+\begin{document} %Dopo ogni begin va sempre un end
 
 \maketitle
 
-% dopo il \maketitle, ad ogni nuova sezione fai queste cose:
+% A cosa serve??????
 \AtBeginSection[]
 {
 \begin{frame}{Outline}
@@ -26,100 +27,102 @@
 
 \section{Introduction}
 
-% le slide si chiamano frame
-\begin{frame}{My first slide} % titolo in cima
-    here i am inserting my text
+% Per passare ad una nuova slide basta inserire \begin{frame}
+\begin{frame}{My first slide} % Il titolo tra parentesi graffe appare in alto nella slide
+    Here i am inserting my text
 \end{frame}
 
-% meglio evitare inserire tanto testo, piuttosto elenchi puntati per inserire info
+% In un'altra slide inseriamo un elenco puntato
 \begin{frame}{Itemize}
 the presentation will be on:
-    \begin{itemize} % elenco puntato
+    \begin{itemize} % Con questa funzione creiamo l'elenco puntato
         \item my first film
-        \item \pause my second % con \pause mi appaiono nella slide sucessiva (è tipo un'animazione un po' più grezza)
-        \item \pause bla bla bla
+        \item \pause my second 
+        \item \pause my third film
     \end{itemize}
 \end{frame}
+%con la funzione \pause usata prima gli ultimi due punti dell'elenco mi appaiono in altre slide, un po' come una sorta di animazione
 
-% cerchi su G le funzioni per cambiare la formattazione del testo (\tiny, \huge...)
-\begin{frame}{Text dimension} % cambiare dimensione
+%Cambiamo la dimensione del testo
+\begin{frame}{Text dimension} 
     \scriptsize{here i am inserting my text}
 \end{frame}
 
+% Nuova slide
 \begin{frame}{4} 
-    \textit{dajeeee}\\ % per andare a capo \\
-    \textbf{caio} bello\\
-    \bigskip % per lasciare spazio più ampio tra una frase e l'altra
-    volevo scrivere \textbf{ciao} % è bene scrivere le parole principali in grassetto
+% I due backslash \\ servono per andare a capo
+    \textit{hello}\\ %testo in corsivo
+    \textbf{How are you} \\ %testo in grassetto
+    \bigskip % Lasciamo uno spazio ampio tra una frase e l'altra
 \end{frame}
 
-\section{formulas}
+\section{Formulas}
 
-\begin{frame}{Algotitms used} % cerca su G: latex math wiki
+%Facciamo una formula matematica
+\begin{frame}{Algotitms used} %Possiamo trovare le varie funzioni per le formule online
 In this work I used the following formula:
 \bigskip
 \begin{equation}
     \delta = \sqrt{\frac{\displaystyle\sum_{i=1}^{N}{(x - \mu)^2}}{N}}
-    % \frac : il primo è il num e la seconda {} è il denom
-    % \sum : mi mette il simbolo di sommatoria, se voglio mettere i=1 fino ad N, metto _{}^{}. se prima scrivo \displaystyle mi mette i e N sopra e sotto il simbolo 
-    % \sqrt : square root
-    % \mu : mi mette il simbolo
-    % \delta : simbolo della sd
+    % \delta = simbolo per la standard deviation
+    % \sqrt = radice quadrata, inserisco tutto il resto della formula tra le sue parentesi
+    % \frac = frazione, la prima parentesi graffa è il numeratore e la seconda il denominatore
+    % \displaystyle = mi mette la i=1 sotto il simbolo sommatoria e la N sopra il simbolo sommatoria
+    % \sum = mette il simbolo della sommatoria che va da 1 a N
+    % \mu = il simbolo della lettera greca mi
 \end{equation}
     
 \end{frame}
 
-\section{Results} % sezione dei risultati
+%Nuova sezione dei risultati
+\section{Results} 
 
-\begin{frame}{main results}
+\begin{frame}{Main results}
 
-\begin{figure} % non lo scrivi a mano, ma dai puntini in alto a dx fai instert image
-    \centering % mi centra il grafico
-    \includegraphics[width=0.8\linewidth]{Screenshot 2024-05-08 alle 17.37.06.png} % 0.8 perchè se cambi un attimo lo stile della pres potrebbe sminchiare
-   % \caption{negative correlation} solitamente la caption non si usa nelle presentazioni
-    \label{fig:enter-label} % anche questa non serve
+%Inseriamo una figura usando i tre puntini in alto su Overleaf
+\begin{figure} 
+    \centering % Mettiamo l'immagine al centro
+    \includegraphics[width=0.9\linewidth]{apodemus.png} % 0.9 è una buona dimensione
+   % \caption{} la togliamo che non si usa di solito nelle presentazioni
+   % \label{fig:enter-label} % Anche la label nelle presentazioni non serve
 \end{figure}
-    
+
+
+% Inseriamo 2 immagini una accanto all'altra
+\begin{figure} 
+    \centering 
+    \includegraphics[width=0.4\linewidth]{apodemus.png} %in questo caso la dimensione è + piccola perché ho 2 immagini vicine
+    \pause \includegraphics[width=0.4\linewidth]{apodemus.png} 
+\end{figure} 
 \end{frame}
 
-% voglio inserire 2 immagini accanto
-\begin{frame}{main results}
-\begin{figure} % non lo scrivi a mano, ma dai puntini in alto a dx fai instert image
-    \centering % mi centra il grafico
-    \includegraphics[width=0.4\linewidth]{Screenshot 2024-05-08 alle 17.37.06.png} 
-    \pause \includegraphics[width=0.4\linewidth]{Screenshot 2024-05-08 alle 17.37.06.png} 
-\end{figure} % le lascio nello stesso \begin
-
-% per metterle una sopra l'altra faccio 2 begin
-\end{frame}
-
-% 4 immagini
+% Mettiamo 4 immagini, due sopra e 2 sotto, quindi 2 righe e 2 colonne
 \begin{frame}{4 figure}
 \begin{figure} % non lo scrivi a mano, ma dai puntini in alto a dx fai instert image
     \centering % mi centra il grafico
-    \includegraphics[width=0.3\linewidth]{Screenshot 2024-05-08 alle 17.37.06.png} 
-    \includegraphics[width=0.3\linewidth]{Screenshot 2024-05-08 alle 17.37.06.png} \\ % vado a capo
-    \includegraphics[width=0.3\linewidth]{Screenshot 2024-05-08 alle 17.37.06.png} 
-    \includegraphics[width=0.3\linewidth]{Screenshot 2024-05-08 alle 17.37.06.png} \\ % mi va a capo, se uso bigskip dopo posso anche ometterla
+    \includegraphics[width=0.3\linewidth]{apodemus.png} 
+    \includegraphics[width=0.3\linewidth]{apodemus.png} \\ % vado a capo
+    \includegraphics[width=0.3\linewidth]{apodemus.png} 
+    \includegraphics[width=0.3\linewidth]{apodemus.png} \\ vado a capo
 \end{figure}
 
-% piccolo testo per sapere da dove ho preso l'immagine
-\bigskip % spazio più ampio
-\centering % per centrare il mio testo
-\scriptsize{Paganelli et al. (2024)} % per conformità nella presentazione, se metti delle citazioni o usi tutte scriptsize o no
+% Inseriamo un testo che ci dica da dove l'immagine è stata presa
+\bigskip % Lasciamo uno spazio grande
+\centering % Mettiamo il testo centrale
+\scriptsize{Viola et al. (2024)} % Se uso delle citazioni le metto tutte con questa funzione????
 \end{frame}
 
-% questa parte non funziona ma va bene, guarda su Git di duccio
-\begin{frame}{Columns} % per mettere di fianco text e immagine
+% Mettiamo il nostro testo e l'immagine vicini
+\begin{frame}{Columns} 
 
     \begin{columns}
-% creo la prima colonna
+% Creiamo la prima colonna
     \begin{column}{width=0.5\textwidth}
-        \includegraphics[width=0.4\linewidth]{Screenshot 2024-05-08 alle 17.37.06.png}       
+        \includegraphics[width=0.4\linewidth]{apodemus.png}       
     \end{column}
 % creo la seconda
     \begin{column}{width=0.5\textwidth}
-        small text here
+        Inseriamo un piccolo testo
     \end{column}
     \end{columns}
 \end{frame}
