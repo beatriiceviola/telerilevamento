@@ -7,7 +7,7 @@ library(imageRy)
 #Ora spieghiamo al sistema in quale cartella del nostro PC estrarrei dati che vorremo utilizzare
 #setwd sta per set working directory
 #L'argomento di questa funzione è il percorso della cartella
-setwd("/User/") 
+setwd("/Users/macbookairair/Downloads/Cartella 1/1.png") #perche non va???
 #Nell'argomento vanno sempre le virgolette "" perché usciamo da R
 #Mai usare il backslash \ ma sempre lo slash normale /
 
