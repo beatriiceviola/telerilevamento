@@ -2,5 +2,6 @@
 library(terra)
 library(ggplot)
 library(viridis)
-library(imagery)
+library(imageRy)
+
 
