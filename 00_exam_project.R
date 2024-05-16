@@ -85,3 +85,6 @@ plot(NDVIclass23)
 plot(ndiff)
 plot(n)
 
+#Calcoliamo l afrequenza dei pixel presenti in una classe
+#e quella dei pixel presenti nell'altra
+freq17 <- freq(NDVIclass17)
