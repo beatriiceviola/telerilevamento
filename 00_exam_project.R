@@ -13,12 +13,16 @@ library(imageRy) #per la funzione im.classify()
 setwd("/Users/macbookairair/Downloads/Progetto R")
 
 #Ora andiamo a prendere dalla nostra cartella l'immagine che ci serve
-#Le immagini sono state fatte da Sentine-2
+#Le immagini sono state fatte da Sentinel-2
 #Le bande sono già decise
-#Prima importiamole immagini con colori naturali
+#Prima importiamo le immagini con colori naturali
 #banda 1 = R = red
 #banda 2 = G = green
 #banda 3 = B = blue
+
+#Scegliamo una colorRampPalette inclusiva per i daltonici
+cl<-colorRampPalette(viridis(7))(255) 
+
 suppressWarnings({
 tc2017 <- rast("tc.sept2017.300m.jpg")
 })
@@ -28,5 +32,5 @@ tc2023 <- rast("tc.sept2023.300m.jpg")
 
 #Mettiamo le 2 immagini vicine per poter fare un confronto diretto, quindi 1 riga e 2 colonne
 par(mfrow=c(1,2))
-plot(tc2017)
-plot(tc2023)
+plot(tc2017, col=cl)
+plot(tc2023, col=cl)
