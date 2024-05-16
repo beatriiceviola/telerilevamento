@@ -12,8 +12,6 @@ library(imageRy) #per la funzione im.classify()
 #Iniziamo cambiando la nostra work directoy da cui R prenderà i dati che ci servono
 setwd("/Users/macbookairair/Downloads/Progetto R")
 
-#Scegliamo una colorRampPalette inclusiva per i daltonici
-cl<-colorRampPalette(viridis(7))(255) 
 
 #Ora andiamo a prendere dalla nostra cartella l'immagine che ci serve
 #Le immagini sono state fatte da Sentinel-2
@@ -54,17 +52,40 @@ dev.off()
 
 #Calcoliamo il Difference Vegetation Index normalizzato per il 2017 , NDVI che varia da 1 a -1
 #NDVI= (NIR-red)/(NIR+red)
-NDVI2017 <- (fc2017[[1]]-fc2017[[2]])/(fc2017[[1]]+fc2017[[2]])
-#NDVI varia da min=-0.72(?????) a max=1.0
+NDVI2017 = (fc2017[[1]]-fc2017[[2]])/(fc2017[[1]]+fc2017[[2]])
 #Plottiamo usando viridis
-plot(NDVI2017, col=cl)
+plot(NDVI2017, col=viridis(100))
 dev.off()
 
 #Calcoliamo la NDVI per il 2023
-NDVI2023 <- (fc2023[[1]]-fc2023[[2]])/(fc2023[[1]]+fc2023[[2]])
-plot(NDVI2023, col=cl) #varia da min=-1 a max=1
+NDVI2023 = (fc2023[[1]]-fc2023[[2]])/(fc2023[[1]]+fc2023[[2]])
+plot(NDVI2023, col=viridis(100)) 
 
 #Mettiamoli di nuovo vicini 
 par(mfrow=c(1,2))
-plot(NDVI2017, col=cl)
-plot(NDVI2023, col=cl)
+plot(NDVI2017, col=viridis(100))
+plot(NDVI2023, col=viridis(100))
+dev.off()
+
+#Facciamo la differenza tra i due anni
+NDVIdiff <- (NDVI2017-NDVI2023)
+plot(NDVIdiff,col=viridis(100))
+dev.off()
+
+#Classifichiamo con 2 cluster, suolo nudo e foresta, le immagini
+#2017
+NDVIclass17 <- im.classify(NDVI2017, 2)
+#2023
+NDVIclass23 <- im.classify(NDVI2023, 2)
+#La differenza
+NDVIclass <- im.classify(NDVIdiff, 2)
+
+#Per tutte e tre
+#1 = foresta (giallo)
+#2 = suolo nudo (viola)
+par(mfrow=c(2,2))
+NDVIclass17 <- im.classify(NDVI2017, 2)
+NDVIclass23 <- im.classify(NDVI2023, 2)
+NDVIclass <- im.classify(NDVIdiff, 2)
+im.classify(diff, 2)
+
