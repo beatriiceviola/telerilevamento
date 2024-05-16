@@ -88,7 +88,7 @@ plot(dvi2006, col=cl)
 #Esercizio: mettiamo vicini questi 2 risultati
 par(mfrow=c(1,2)) #1 riga, 2 colonne
 plot(dvi1992, col=cl)
-plot(dvi1006, col=cl)
+plot(dvi2006, col=cl)
 
 dev.off()
 
