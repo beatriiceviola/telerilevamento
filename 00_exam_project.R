@@ -76,15 +76,27 @@ plot(NDVIclass17)
 NDVIclass23 <- im.classify(NDVI2023, 2)
 plot(NDVIclass23)
 
-#Queste sono solo prove da riguardare
-ndiff <- (NDVIclass17-NDVIclass23)
-n <- (NDVIclass23-NDVIclass17)
-par(mfrow=c(2,2))
-plot(NDVIclass17)
-plot(NDVIclass23)
-plot(ndiff)
-plot(n)
-
-#Calcoliamo l afrequenza dei pixel presenti in una classe
+#Calcoliamo la frequenza dei pixel presenti in una classe
 #e quella dei pixel presenti nell'altra
+#2017
 freq17 <- freq(NDVIclass17)
+freq17
+#Calcoliamo il totale dei pixel
+tot17 <- ncell (NDVIclass17)
+tot17
+#Proporzione
+prop17 = freq17/tot17
+prop17
+#Percentuale
+perc17 = prop17*100
+perc17
+
+#Facciamo la stessa cosa per il 2023
+freq23 <- freq(NDVIclass23)
+freq23
+tot23 <- ncell(NDVIclass23)
+tot23
+prop23 = freq23/tot23
+prop23
+perc23 = prop23*100
+perc23
