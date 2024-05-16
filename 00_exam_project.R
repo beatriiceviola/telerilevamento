@@ -10,7 +10,7 @@ library(imageRy) #per la funzione im.classify()
 #Osserviamo gli effetti di questa riforestazione
 #Le immagini sono state prese da Copernicus Browser
 #Iniziamo cambiando la nostra work directoy da cui R prenderà i dati che ci servono
-setwd("/User/macbookairair/Progetto R")
+setwd("/Users/macbookairair/Progetto R")
 
 #Ora andiamo a prendere dalla nostra cartella l'immagine che ci serve
 suppressWarnings({
