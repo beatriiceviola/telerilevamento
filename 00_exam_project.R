@@ -41,8 +41,7 @@ dev.off()
 #banda 2 = G = red
 #banda 3 = B = green
 suppressWarnings({
-fc2017 <- rast("fc.sep2017.jpg")
-}) #NON VA DA RIGUARDARE
+fc2017 <- rast("fc.sep2017.jpg")})
 suppressWarnings({
 fc2023 <- rast("fc.sep2023.jpg")
 })
@@ -55,4 +54,4 @@ dev.off()
 
 #Calcoliamo il Difference Vegetation Index normalizzato , NDVI che varia da 1 a -1
 #NDVI= (NIR-red)/(NIR+red)
-NDVI2017 <- (fc2017[[1]]-fc2023[[2]])/(fc2017[[1]+fc2023[[2]])
+NDVI2017 <- (fc2017[[1]]-fc2023[[2]])/(fc2017[[1]]+fc2023[[2]])
