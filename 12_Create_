@@ -1,1 +1,21 @@
+#---
+title: "Vignette"
+author: "Beatrice Viola"
+date: "2024-05-16"
+output: html_document
+---
+
+#My first Markdown file!
+This file contains functions for R scripting in Geo-Ecological Remote Sensing.
+
+We are going to make use of the following package:
+
+```{r}
+library(imageRy)
+```
+
+In order to visualize the list of data use:
+```{r, eval=FALSE}
+im.list()
+```
 
