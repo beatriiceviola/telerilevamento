@@ -18,7 +18,11 @@ Questo corso comprende i seguenti programmi:
 Non è richiesta nessuna conoscenza preliminare di R
 
 > **Link esterni utili**
-[unibo](https://www.unibo.it/it)
+[Alma Mater Studiorum Università di Bologna sito](https://www.unibo.it/it)
 
+## Principali pacchetti utilizzati
+```{r}
+library(imageRy)
+```
 
 
