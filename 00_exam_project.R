@@ -67,25 +67,21 @@ plot(NDVI2017, col=viridis(100))
 plot(NDVI2023, col=viridis(100))
 dev.off()
 
-#Facciamo la differenza tra i due anni
-NDVIdiff <- (NDVI2017-NDVI2023)
-plot(NDVIdiff,col=viridis(100))
-dev.off()
 
 #Classifichiamo con 2 cluster, suolo nudo e foresta, le immagini
 #2017
 NDVIclass17 <- im.classify(NDVI2017, 2)
+plot(NDVIclass17)
 #2023
 NDVIclass23 <- im.classify(NDVI2023, 2)
-#La differenza
-NDVIclass <- im.classify(NDVIdiff, 2)
+plot(NDVIclass23)
 
-#Per tutte e tre
-#1 = foresta (giallo)
-#2 = suolo nudo (viola)
+#Queste sono solo prove da riguardare
+ndiff <- (NDVIclass17-NDVIclass23)
+n <- (NDVIclass23-NDVIclass17)
 par(mfrow=c(2,2))
-NDVIclass17 <- im.classify(NDVI2017, 2)
-NDVIclass23 <- im.classify(NDVI2023, 2)
-NDVIclass <- im.classify(NDVIdiff, 2)
-im.classify(diff, 2)
+plot(NDVIclass17)
+plot(NDVIclass23)
+plot(ndiff)
+plot(n)
 
