@@ -6,8 +6,8 @@ Con i due punti possiamo inserire delle emoji 📡
 Questo corso comprende i seguenti programmi:
 
 + Scienze e gestione della natura
-+ geografia e processi territoriali
-+ geologia e territorio
++ Geografia e processi territoriali
++ Geologia e territorio
 
 ## Principali linguaggi utilizzati
 + R
