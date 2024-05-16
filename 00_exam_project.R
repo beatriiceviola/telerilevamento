@@ -52,6 +52,19 @@ plot(fc2017)
 plot(fc2023)
 dev.off()
 
-#Calcoliamo il Difference Vegetation Index normalizzato , NDVI che varia da 1 a -1
+#Calcoliamo il Difference Vegetation Index normalizzato per il 2017 , NDVI che varia da 1 a -1
 #NDVI= (NIR-red)/(NIR+red)
-NDVI2017 <- (fc2017[[1]]-fc2023[[2]])/(fc2017[[1]]+fc2023[[2]])
+NDVI2017 <- (fc2017[[1]]-fc2017[[2]])/(fc2017[[1]]+fc2017[[2]])
+#NDVI varia da min=-0.72(?????) a max=1.0
+#Plottiamo usando viridis
+plot(NDVI2017, col=cl)
+dev.off()
+
+#Calcoliamo la NDVI per il 2023
+NDVI2023 <- (fc2023[[1]]-fc2023[[2]])/(fc2023[[1]]+fc2023[[2]])
+plot(NDVI2023, col=cl) #varia da min=-1 a max=1
+
+#Mettiamoli di nuovo vicini 
+par(mfrow=c(1,2))
+plot(NDVI2017, col=cl)
+plot(NDVI2023, col=cl)
