@@ -16,10 +16,7 @@ setwd("/Users/macbookairair/Downloads/Progetto R")
 #Ora andiamo a prendere dalla nostra cartella l'immagine che ci serve
 #Le immagini sono state fatte da Sentinel-2
 #Le bande sono già decise
-#Prima importiamo le immagini con colori naturali
-#banda 1 = R = red
-#banda 2 = G = green
-#banda 3 = B = blue
+#Prima importiamo le immagini con colori naturali true colors=tc
 suppressWarnings({
 tc2017 <- rast("tc.sept2017.300m.jpg")
 })
@@ -34,7 +31,7 @@ plot(tc2023)
 dev.off()
 
 #Importiamo ora le stesse immagini con falsi colori
-#sempre bande già decise da Sentinel-2
+#Bande già decise da Sentinel-2
 #banda 1 = R = NIR
 #banda 2 = G = red
 #banda 3 = B = green
@@ -100,5 +97,8 @@ prop23 = freq23/tot23
 prop23
 perc23 = prop23*100
 perc23
+
+#Calcoliamo ora la differenza
+diff_nir = fc2017[[1]] - fc2023[[1]]
 
 
