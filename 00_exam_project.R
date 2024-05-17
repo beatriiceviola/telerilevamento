@@ -100,3 +100,5 @@ prop23 = freq23/tot23
 prop23
 perc23 = prop23*100
 perc23
+
+
