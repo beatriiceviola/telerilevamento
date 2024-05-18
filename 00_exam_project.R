@@ -162,21 +162,28 @@ tabout #Visualizziamo il dataframe
 #Creiamo ora i grafici con ggplot
 #2017
 ggplot(tabout, aes(x=class, y= y2017, color=class)) + 
-geom_bar(stat="identity", fill="white")+ ylim(c(0,100)) +
+geom_bar(stat="identity", aes(fill= class), width= 0.7)+
+ylim(c(0,100)) +
 ggtitle("Area d'indagine nel 2017") + xlab("Classi") + ylab("Valori percentuali")+
 theme(plot.title = element_text(face = "bold", hjust = 0.5)) 
 
 #2023
 ggplot(tabout, aes(x=class, y=y2023, color=class)) + 
-geom_bar(stat="identity", fill="white")+ ylim(c(0,100))+
+geom_bar(stat="identity",aes(fill= class), width= 0.7)+        
+ylim(c(0,100))+
 ggtitle("Area d'indagine nel 2023") + xlab("Classi") + ylab("Valori percentuali")+
 theme(plot.title = element_text(face = "bold", hjust = 0.5)) 
 
 #Visualizziamo i due grafici insieme con patchwork
-p1 <-ggplot(tabout, aes(x=class, y=y2017, color=class)) + geom_bar(stat="identity", fill="white")+ ylim(c(0,100))
-p2 <-ggplot(tabout, aes(x=class, y=y2023, color=class)) + geom_bar(stat="identity", fill="white")+ ylim(c(0,100))
+p1 <-ggplot(tabout, aes(x=class, y=y2017, color=class)) + geom_bar(stat="identity", aes(fill=class), width= 0.7)+ ylim(c(0,100))+ggtitle("Area d'indagine nel 2017") + xlab("Classi") + ylab("Valori percentuali")+
+theme(plot.title = element_text(face = "bold", hjust = 0.5)) 
+p2 <-ggplot(tabout, aes(x=class, y=y2023, color=class)) + geom_bar(stat="identity", aes(fill=class),width= 0.7)+ ylim(c(0,100))+ggtitle("Area d'indagine nel 2023") + xlab("Classi") + ylab("Valori percentuali")+
+theme(plot.title = element_text(face = "bold", hjust = 0.5)) 
 p1 + p2
 
+dev.off
+
+#DEVAIZIONE STANDARD
 
 
 
