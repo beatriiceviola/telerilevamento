@@ -51,6 +51,7 @@ plot(fc2017)
 plot(fc2023)
 dev.off()
 
+
 #Calcoliamo il Difference Vegetation Index normalizzato per il 2017 , NDVI che varia da 1 a -1
 #NDVI= (NIR-red)/(NIR+red)
 NDVI2017 = (fc2017[[1]]-fc2017[[2]])/(fc2017[[1]]+fc2017[[2]])
