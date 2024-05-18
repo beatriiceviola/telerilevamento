@@ -3,7 +3,7 @@ library(terra) #per la funzione rast
 library(ggplot2) #per costruire grafici
 library(viridis) #per avere una colorRampoPalette adatta ai daltonici
 library(imageRy) #per la funzione im.classify()
-
+library(patchwork) #per unire i grafici
 
 #Il progetto riguarda una zona di riforestazione nei dintorni di Miguel Pereira in Brasile
 #Dopo gli incendi del 2014 sono stati ripiantati più di 60 mila alberi tra il 2018 e il 2021
@@ -51,32 +51,70 @@ plot(fc2017)
 plot(fc2023)
 dev.off()
 
+#Facciamo un plot RGB per visualizzare meglio l'immagine
+#2017
+im.plotRGB(fc2017, r=1, g=2 , b=3) #NIR on red, la vegetazione apparirà rossa e il suolo nudo azzurrino 
+im.plotRGB(fc2017, r=1, g=2 , b=3) #NIR on green, veg= verde, suolo nudo= rosino
 
-#Calcoliamo il Difference Vegetation Index normalizzato per il 2017 , NDVI che varia da 1 a -1
+#Facciamo la stessa cosa per il 2023
+im.plotRGB(fc2023, r=1, g=2 , b=3) 
+im.plotRGB(fc2023, r=1, g=2 , b=3)
+
+#Facciamo un multiframe
+par(mfrow=c(2,2)) # multiframe 2 righe e 3 colonne
+im.plotRGB(fc2017, 1, 2, 3) # NIR on R
+im.plotRGB(fc2023, 1, 2, 3) # NIR on R
+im.plotRGB(fc2017, 2, 1, 3) # NIR on G
+im.plotRGB(fc2023, 2, 1, 3) # NIR on G
+
+
+#Scegliamo una palette di colori (rosso, rosa verde in modo che la vegetazione appaia sempre verde e il suolo nudo rosino)
+cold <- colorRampPalette(c("tomato4", "lightpink", "olivedrab")) (100)
+
+#DVI e NDVI
+#Calcoliamo la DVI, Difference Vegetation Index (DVI= NIR-red)
+#2017
+dvi2017 <- (fc2017[[1]]-fc2017[[2]])
+plot(dvi2017, col=cold)
+
+#2023
+dvi2023 <- (fc2023[[1]]-fc2023[[2]])
+plot(dvi2023, col=cold)
+
+#Calcoliamo la Normalized Difference Vegetation Index NDVI che varia da 1 a -1
 #NDVI= (NIR-red)/(NIR+red)
-NDVI2017 = (fc2017[[1]]-fc2017[[2]])/(fc2017[[1]]+fc2017[[2]])
-#Plottiamo usando viridis
-plot(NDVI2017, col=viridis(100))
+#2017
+ndvi2017 = dvi2017/(fc2017[[1]]+fc2017[[2]])
+#Plottiamo usando la palette usata prima
+plot(ndvi2017, col=cold)
 dev.off()
 
 #Calcoliamo la NDVI per il 2023
-NDVI2023 = (fc2023[[1]]-fc2023[[2]])/(fc2023[[1]]+fc2023[[2]])
-plot(NDVI2023, col=viridis(100)) 
+ndvi2023 = dvi2023/(fc2023[[1]]+fc2023[[2]])
+plot(ndvi2023, col=cold) 
 
-#Mettiamoli di nuovo vicini 
-par(mfrow=c(1,2))
-plot(NDVI2017, col=viridis(100))
-plot(NDVI2023, col=viridis(100))
-dev.off()
+#Creiamo uno stacksent per la NDVI nei 2 anni
+stacksent <- c(ndvi2017, ndvi2023)
+plot(stacksent, col=cold)
 
+#Valutiamo la correlazione tra le due immagini
+pairs(stacksent) #COME SI VALUTA?????
 
-#Classifichiamo con 2 cluster, suolo nudo e foresta, le immagini
+#Dalle due immagini vicine riusciamo a vedere come nel 2023 la vegetazione (che appare verde)
+#sia aumentata, ma come facciamo a capirlo non solo qualitativamente ma anche qunatitativamente?
+
+#CLASSIFICAZIONE ???? meglio su fc2017 o su ndvi2017????
+#Classifichiamo con 2 cluster le immagini
 #2017
-NDVIclass17 <- im.classify(NDVI2017, 2)
-plot(NDVIclass17)
+class17 <- im.classify(fc2017, num_clusters=2)
+class.names <- c("foresta", "suolo nudo")
+#Plottiamo dando un titolo all'immagine e un nome all classi
+plot(class17, main= "Classificazione 2017", type="classes", levels= class.names)
+
 #2023
-NDVIclass23 <- im.classify(NDVI2023, 2)
-plot(NDVIclass23)
+class23 <- im.classify(fc2023, num_clusters=2)
+class.names <- c("foresta", "suolo nudo")
+plot(class23, main= "Classificazione 2023", type="classes", levels=class.names)
 
 #Calcoliamo la frequenza dei pixel presenti in una classe
 #e quella dei pixel presenti nell'altra
