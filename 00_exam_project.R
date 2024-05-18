@@ -12,7 +12,6 @@ library(patchwork) #per unire i grafici
 #Iniziamo cambiando la nostra work directoy da cui R prenderà i dati che ci servono
 setwd("/Users/macbookairair/Downloads/Progetto R")
 
-
 #Ora andiamo a prendere dalla nostra cartella l'immagine che ci serve
 #Le immagini sono state fatte da Sentinel-2
 #Le bande sono già decise
@@ -20,7 +19,6 @@ setwd("/Users/macbookairair/Downloads/Progetto R")
 #banda 1 = R =
 #banda 2 = G =
 #banda 3 = B =
-
 suppressWarnings({
 tc2017 <- rast("tc.sept2017.300m.jpg")
 })
@@ -106,40 +104,44 @@ pairs(stacksent) #COME SI VALUTA?????
 #CLASSIFICAZIONE ???? meglio su fc2017 o su ndvi2017????
 #Classifichiamo con 2 cluster le immagini
 #2017
-class17 <- im.classify(fc2017, num_clusters=2)
+class17 <- im.classify(ndvi2017, num_clusters=2)
 class.names <- c("foresta", "suolo nudo")
 #Plottiamo dando un titolo all'immagine e un nome all classi
 plot(class17, main= "Classificazione 2017", type="classes", levels= class.names)
 
 #2023
-class23 <- im.classify(fc2023, num_clusters=2)
+class23 <- im.classify(ndvi2023, num_clusters=2)
 class.names <- c("foresta", "suolo nudo")
 plot(class23, main= "Classificazione 2023", type="classes", levels=class.names)
 
 #Calcoliamo la frequenza dei pixel presenti in una classe
 #e quella dei pixel presenti nell'altra
 #2017
-freq17 <- freq(NDVIclass17)
+freq17 <- freq(class17)
 freq17
 #Calcoliamo il totale dei pixel
-tot17 <- ncell (NDVIclass17)
+tot17 <- ncell (class17)
 tot17
 #Proporzione
 prop17 = freq17/tot17
 prop17
-#Percentuale
+#Percentuale 
+#Foresta = 51%
+#Suolo nudo= 49%
 perc17 = prop17*100
 perc17
 
 #Facciamo la stessa cosa per il 2023
-freq23 <- freq(NDVIclass23)
+freq23 <- freq(class23)
 freq23
-tot23 <- ncell(NDVIclass23)
+tot23 <- ncell(class23)
 tot23
 prop23 = freq23/tot23
 prop23
+#Foresta= 61%
+#Suolo nudo= 39%
 perc23 = prop23*100
-perc23
+perc23 
 
 #Calcoliamo ora la differenza
 diff_nir = fc2017[[1]] - fc2023[[1]]
