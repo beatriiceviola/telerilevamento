@@ -147,3 +147,31 @@ perc23
 diff_nir = fc2017[[1]] - fc2023[[1]]
 cl <- colorRampPalette(c("red","white","blue"))(100)
 plot(diff_nir, col=cl)
+
+#CREIAMO UN DATAFRAME E UN GRAFICO
+#Per prima cosa andiamo a creare una tabella per confrontare 
+#come variano le frequenze delle due classi nei due anni
+
+class <- c("foresta","suolo nudo") #Prima colonna
+y2017 <- c(51,49) #Seconda
+y2023 <- c(61,39) #Terza
+
+tabout <- data.frame(class, y2017, y2023)
+tabout #Visualizziamo il dataframe
+
+#Creiamo ora i grafici con ggplot
+#2017
+ggplot(tabout, aes(x=class, y=y2017, color=class)) + geom_bar(stat="identity", fill="white")+ ylim(c(0,100))
+
+#2023
+ggplot(tabout, aes(x=class, y=y2023, color=class)) + geom_bar(stat="identity", fill="white")+ ylim(c(0,100))
+
+#Visualizziamo i due grafici insieme con patchwork
+p1 <-ggplot(tabout, aes(x=class, y=y2017, color=class)) + geom_bar(stat="identity", fill="white")+ ylim(c(0,100))
+p2 <-ggplot(tabout, aes(x=class, y=y2023, color=class)) + geom_bar(stat="identity", fill="white")+ ylim(c(0,100))
+p1 + p2
+
+
+
+
+
