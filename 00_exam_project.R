@@ -17,6 +17,10 @@ setwd("/Users/macbookairair/Downloads/Progetto R")
 #Le immagini sono state fatte da Sentinel-2
 #Le bande sono già decise
 #Prima importiamo le immagini con colori naturali true colors=tc
+#banda 1 = R =
+#banda 2 = G =
+#banda 3 = B =
+
 suppressWarnings({
 tc2017 <- rast("tc.sept2017.300m.jpg")
 })
