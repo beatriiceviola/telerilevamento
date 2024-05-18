@@ -143,7 +143,7 @@ prop23
 perc23 = prop23*100
 perc23 
 
-#Calcoliamo ora la differenza
+#Calcoliamo ora la differenza ???? non capisco che significa
 diff_nir = fc2017[[1]] - fc2023[[1]]
-
-
+cl <- colorRampPalette(c("red","white","blue"))(100)
+plot(diff_nir, col=cl)
