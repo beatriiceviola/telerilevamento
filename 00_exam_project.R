@@ -184,6 +184,23 @@ p1 + p2
 dev.off
 
 #DEVAIZIONE STANDARD
+nir <- fc2017[[1]]
+plot(nir)
+sd3 <- focal(nir, matrix(1/9, 3, 3), fun=sd)
+plot(sd3, col=viridis(100))
+
+pcimage <- im.pca(fc2017)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
