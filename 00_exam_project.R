@@ -190,11 +190,10 @@ sd3 <- focal(nir, matrix(1/9, 3, 3), fun=sd)
 plot(sd3, col=viridis(100))
 
 pcimage <- im.pca(fc2017)
+tot <- sum(31.842347, 28.085661, 4.947781)
 
-
-
-
-
+#tot pc1 49%
+31.842347*100/tot
 
 
 
