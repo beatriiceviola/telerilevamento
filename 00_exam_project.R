@@ -182,17 +182,58 @@ p1 + p2
 
 dev.off
 
-#DEVAIZIONE STANDARD
-nir <- fc2017[[1]]
-plot(nir)
-sd3 <- focal(nir, matrix(1/9, 3, 3), fun=sd)
+#CALCOLIAMO LA DEVIAZIONE STANDARD SULLA BANDA DEL NIR
+#2017
+nir17 <- fc2017[[1]]
+plot(nir17)
+sd7 <- focal(nir17, matrix(1/9, 3, 3), fun=sd)
+plot(sd7, col=viridis(100))
+
+#2023
+nir23 <- fc2023[[1]]
+plot(nir23)
+sd3 <- focal(nir23, matrix(1/9, 3, 3), fun=sd)
 plot(sd3, col=viridis(100))
 
-pcimage <- im.pca(fc2017)
-tot <- sum(31.842347, 28.085661, 4.947781)
+#CALCOLIAMO LE COMPONENTI PRINCIPALI
+#2017
+pcimage17 <- im.pca(fc2017)
+tot <- sum(43.796243, 35.905008, 5.273933)
+#tot pc1 52%
+43.796243*100/tot
+#tot pc2 42%
+35.905008*100/tot
+#tot pc3 6%
+5.273933*100/tot
 
-#tot pc1 49%
-31.842347*100/tot
+#2023
+pcimage23 <- im.pca(fc2023)
+total <- sum(37.577013, 22.915812, 3.825119)
+#tot pc1 59%
+37.577013*100/total
+#tot pc2 35%
+22.915812*100/total
+#tot pc3 6%
+3.825119*100/total
+
+#Ora che, invece, usiamo la tecnica della moving window sulla PC1
+#che è la più rappresentativa (invece che calcolarla su una banda scelta da noi)
+#2017
+pc17<-pcimage17$PC1
+pc17.sd7<-focal(pc17, matrix(1/9, 3, 3), fun=sd)
+plot(pc17.sd7, col=viridis(100))
+
+#2023
+pc23 <-pcimage23$PC1
+pc23.sd3<-focal(pc23, matrix(1/49, 7, 7), fun=sd)
+plot(pc23.sd3, col=viridis(100))
+
+#Facciamo uno stack
+stack <- c(sd3, sd7, pc17.sd7, pc23.sd3)
+plot(stack, col=viridis(100))
+
+
+
 
 
 
