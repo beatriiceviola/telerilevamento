@@ -52,11 +52,11 @@ dev.off()
 #Facciamo un plot RGB per visualizzare meglio l'immagine
 #2017
 im.plotRGB(fc2017, r=1, g=2 , b=3) #NIR on red, la vegetazione apparirà rossa e il suolo nudo azzurrino 
-im.plotRGB(fc2017, r=1, g=2 , b=3) #NIR on green, veg= verde, suolo nudo= rosino
+im.plotRGB(fc2017, r=2, g=1 , b=3) #NIR on green, veg= verde, suolo nudo= rosino
 
 #Facciamo la stessa cosa per il 2023
 im.plotRGB(fc2023, r=1, g=2 , b=3) 
-im.plotRGB(fc2023, r=1, g=2 , b=3)
+im.plotRGB(fc2023, r=2, g=1 , b=3)
 
 #Facciamo un multiframe
 par(mfrow=c(2,2)) # multiframe 2 righe e 3 colonne
@@ -64,7 +64,6 @@ im.plotRGB(fc2017, 1, 2, 3) # NIR on R
 im.plotRGB(fc2023, 1, 2, 3) # NIR on R
 im.plotRGB(fc2017, 2, 1, 3) # NIR on G
 im.plotRGB(fc2023, 2, 1, 3) # NIR on G
-
 
 #Scegliamo una palette di colori (rosso, rosa verde in modo che la vegetazione appaia sempre verde e il suolo nudo rosino)
 cold <- colorRampPalette(c("tomato4", "lightpink", "olivedrab")) (100)
@@ -101,7 +100,7 @@ pairs(stacksent) #COME SI VALUTA?????
 #Dalle due immagini vicine riusciamo a vedere come nel 2023 la vegetazione (che appare verde)
 #sia aumentata, ma come facciamo a capirlo non solo qualitativamente ma anche qunatitativamente?
 
-#CLASSIFICAZIONE ???? meglio su fc2017 o su ndvi2017????
+#CLASSIFICAZIONE 
 #Classifichiamo con 2 cluster le immagini
 #2017
 class17 <- im.classify(ndvi2017, num_clusters=2)
