@@ -104,7 +104,7 @@ pairs(stacksent) #COME SI VALUTA?????
 #Classifichiamo con 2 cluster le immagini
 #2017
 class17 <- im.classify(ndvi2017, num_clusters=2)
-class.names <- c("foresta", "suolo nudo")
+class.names <- c("suolo nudo", "foresta")
 #Plottiamo dando un titolo all'immagine e un nome all classi
 plot(class17, main= "Classificazione 2017", type="classes", levels= class.names)
 
