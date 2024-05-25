@@ -124,12 +124,72 @@ Risultati per l'indice DVI dove il verde rappresenta la vegetazione e il rosa il
 \begin{column}{0.5\textwidth}
 \begin{center}
     \includegraphics[width=\textwidth]{dvi2017.png}
+    \caption{DVI 2017}
 \end{center}
 \end{column}
 \begin{column}{0.5\textwidth}  
     \begin{center}
      \includegraphics[width=\textwidth]{dvi2023.png}
+     \caption{DVI 2023}
      \end{center}
 \end{column}
 \end{columns}
 \end{frame} 
+
+\begin{frame}{Risultati indici di vegetazione}
+Risultati per l'indice NDVI dove il verde rappresenta la vegetazione e il rosa il suolo nudo
+\bigskip
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{center}
+    \includegraphics[width=\textwidth]{ndvi2017.png}
+    \caption{NDVI 2017}
+\end{center}
+\end{column}
+\begin{column}{0.5\textwidth}  
+    \begin{center}
+     \includegraphics[width=\textwidth]{ndvi2023.png}
+     \caption{NDVI 2023}
+     \end{center}
+\end{column}
+\end{columns}
+\end{frame} 
+
+\begin{frame}{Risultati classificazione}
+Quantifichiamo il cambiamento con \texttt{im.classify}
+\bigskip
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{center}
+    \includegraphics[width=\textwidth]{class17.png}
+\end{center}
+\end{column}
+\begin{column}{0.5\textwidth}  
+    \begin{center}
+     \includegraphics[width=\textwidth]{class2023.png}
+     \end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{Quantificazione dei pixel}
+Calcolata la frequenza dei pixel per ogni classee il totale dei pixel per ogni immagine ne otteniamo poi la percentuale osservando che:
+\bigskip
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\textbf{Settembre 2017:}
+\begin{itemize}
+    \item Foresta: 51\%
+    \item Suolo nudo: 49\%
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}  
+\textbf{Settembre 2023:}
+ \begin{itemize}
+    \item Foresta: 61\%
+    \item Suolo nudo: 59\%
+    \end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
