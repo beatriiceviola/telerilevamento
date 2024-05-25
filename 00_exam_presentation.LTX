@@ -1,1 +1,135 @@
+\documentclass{beamer}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{listings}
+\usepackage{natbib}
+\usepackage{subfigure}
 
+\usetheme{Frankfurt}
+\usecolortheme{seahorse}
+
+\logo{\includegraphics[width=1.5cm]{logounibo.jpeg}} %?????
+
+\title{Effetti delle riforestazione a Miguel Pereira, Brasile}
+\date{}
+\author{Beatrice Viola}
+\institute{Alma Mater Studiorum UniBo}
+
+\begin{document}
+
+\maketitle
+
+\AtBeginSection[]
+{
+\begin{frame}{Outline}
+\tableofcontents[currentsection]
+\end{frame}
+}
+
+\section{Introduzione}
+\begin{frame}{Riforestazione, quando e come?}
+\begin{itemize}
+    \item Possibili cause
+    \item L'importanza dei volontari
+    \item Manutenzione e monitoraggio
+    \bigskip
+\end{itemize}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{miguel2017.jpeg}
+    \end{center}
+\end{column}
+\begin{column}{0.5\textwidth}  
+    \begin{center}
+     \includegraphics[width=0.7\textwidth]{miguel2023.jpeg}
+\end{center}
+\end{column}
+\end{columns}
+
+\end{frame} 
+
+\begin{frame}{Raccolta dati}
+Sentinel 2 - Copernicus Open Hub
+\bigskip
+\begin{itemize}
+    \item Selezionare area di interesse
+    \item Scegliere una massima copertura nuvolosa bassa
+    \item Selezionare la data di interesse
+    \item Selezionare False color come livello
+    \item Salvare l'immagine con formato JPG
+    \bigskip
+\end{itemize}
+\end{frame} 
+
+\begin{frame}{Pacchetti utilizzati}
+Per la realizzazione di questo progetto sono stati usati i seguenti pacchetti:
+\bigskip
+\begin{itemize}
+    \item    \texttt{library(terra)} 
+    \item    \texttt{library(imageRy)} 
+    \item    \texttt{library(ggplot2)} 
+    \item    \texttt{library(viridis)}
+    \item    \texttt{library(patchwork)}
+    \end{itemize}
+\end{frame}
+
+\section{Scopo del progetto}
+\begin{frame}{Scopo del progetto}
+Sono stati analizzati i seguenti indici calcolati per l'area di Miguel Pereira
+\begin{itemize} 
+    \item  \begin{equation}
+DVI={NIR-RED}
+    \end{equation}
+    \item  \begin{equation}
+NDVI=\frac{NIR-RED}{NIR+RED}
+    \end{equation}
+\end{itemize}
+\bigskip
+Sono stati confrontati gli indici calcolati a Settembre 2017 con quelli calcolati a Settembre 2023 
+\end{frame}
+
+\begin{frame}{Materiali e metodi}
+Funzioni utilizzate:
+\bigskip
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+     \item    \texttt{setwd()} 
+    \item    \texttt{rast} 
+    \item    \texttt{par} 
+    \item    \texttt{im.plotRGB}
+    \item    \texttt{colorRampPalette}
+    \item    \texttt{R} come calcolatrice
+    \item    \texttt{pairs}
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}  
+ \begin{itemize}
+    \item    \texttt{im.classify}
+    \item    \texttt{concatenate}
+    \item    \texttt{freq}
+    \item    \texttt{data.frame}
+    \item    \texttt{ggplot}
+    \item    \texttt{focal}
+    \item    \texttt{im.pca}      \end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\section{Risultati}
+\begin{frame}{Risultati indici di vegetazione}
+Risultati per l'indice DVI dove il verde rappresenta la vegetazione e il rosa il suolo nudo
+\bigskip
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{center}
+    \includegraphics[width=\textwidth]{dvi2017.png}
+\end{center}
+\end{column}
+\begin{column}{0.5\textwidth}  
+    \begin{center}
+     \includegraphics[width=\textwidth]{dvi2023.png}
+     \end{center}
+\end{column}
+\end{columns}
+\end{frame} 
