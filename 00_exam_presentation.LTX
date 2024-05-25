@@ -116,8 +116,8 @@ Funzioni utilizzate:
 \end{columns}
 \end{frame}
 
-\section{Risultati}
-\begin{frame}{Risultati indici di vegetazione}
+\section{Risultati DVI e NDVI}
+\begin{frame}{Risultati DVI}
 Risultati per l'indice DVI dove il verde rappresenta la vegetazione e il rosa il suolo nudo
 \bigskip
 \begin{columns}
@@ -136,7 +136,7 @@ Risultati per l'indice DVI dove il verde rappresenta la vegetazione e il rosa il
 \end{columns}
 \end{frame} 
 
-\begin{frame}{Risultati indici di vegetazione}
+\begin{frame}{Risultati NDVI}
 Risultati per l'indice NDVI dove il verde rappresenta la vegetazione e il rosa il suolo nudo
 \bigskip
 \begin{columns}
@@ -155,6 +155,7 @@ Risultati per l'indice NDVI dove il verde rappresenta la vegetazione e il rosa i
 \end{columns}
 \end{frame} 
 
+\section{Risultati Classificazione}
 \begin{frame}{Risultati classificazione}
 Quantifichiamo il cambiamento con \texttt{im.classify}
 \bigskip
@@ -193,3 +194,84 @@ Calcolata la frequenza dei pixel per ogni classee il totale dei pixel per ogni i
 \end{column}
 \end{columns}
 \end{frame}
+
+
+\begin{frame}{Frame Title}
+Osserviamo la differenza tra la banda del vicino infrarosso (NIR) del 2023 con quella del 2017
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{diff23-17.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Frame Title}
+    Otteniamo i graifici
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{ggplot.png}
+    \end{figure}
+\end{frame}
+
+\section{Risultati PCA}
+\begin{frame}{Moving Window (1)}
+    \bigskip
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{center}
+    \includegraphics[width=\textwidth]{devstandard su NIR 17.png}
+    \caption{DVI 2017}
+\end{center}
+\end{column}
+\begin{column}{0.5\textwidth}  
+    \begin{center}
+     \includegraphics[width=\textwidth]{devstandard su Nir 23.png}
+     \caption{DVI 2023}
+     \end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+
+
+\begin{frame}{Moving Window (2)}
+    \bigskip
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{center}
+    \includegraphics[width=\textwidth]{pca 17.png}
+    \caption{DVI 2017}
+\end{center}
+\end{column}
+\begin{column}{0.5\textwidth}  
+    \begin{center}
+     \includegraphics[width=\textwidth]{pca 23.png}
+     \caption{DVI 2023}
+     \end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\section{Discussione}
+\begin{frame}{Frame Title}
+    
+\end{frame}
+
+\begin{frame}{Frame Title}
+    
+\end{frame}
+
+\begin{frame}{Frame Title}
+    
+\end{frame}
+
+\begin{frame}{Frame Title}
+    
+\end{frame}
+
+\begin{frame}{Frame Title}
+    
+\end{frame}
+
+
+\end{document}
