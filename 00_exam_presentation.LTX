@@ -1,8 +1,6 @@
 \documentclass{beamer}
 \usepackage{graphicx} % Required for inserting images
 \usepackage{listings}
-\usepackage{natbib}
-\usepackage{subfigure}
 
 \usetheme{Frankfurt}
 \usecolortheme{seahorse}
@@ -37,11 +35,13 @@
 \begin{column}{0.5\textwidth}
 \begin{center}
   \includegraphics[width=0.7\textwidth]{miguel2017.jpeg}
+  \caption{Settembre 2017}
     \end{center}
 \end{column}
 \begin{column}{0.5\textwidth}  
     \begin{center}
      \includegraphics[width=0.7\textwidth]{miguel2023.jpeg}
+     \caption{Settembre 2023}
 \end{center}
 \end{column}
 \end{columns}
@@ -73,7 +73,7 @@ Per la realizzazione di questo progetto sono stati usati i seguenti pacchetti:
     \end{itemize}
 \end{frame}
 
-\section{Scopo del progetto}
+\section{Indici}
 \begin{frame}{Scopo del progetto}
 Sono stati analizzati i seguenti indici calcolati per l'area di Miguel Pereira
 \begin{itemize} 
@@ -175,7 +175,9 @@ Quantifichiamo il cambiamento con \texttt{im.classify}
 
 
 \begin{frame}{Quantificazione dei pixel}
-Calcolata la frequenza dei pixel per ogni classee il totale dei pixel per ogni immagine ne otteniamo poi la percentuale osservando che:
+Calcolata la frequenza dei pixel per ogni classe e il totale dei pixel per ogni immagine ne otteniamo poi la percentuale osservando che:
+\bigskip
+\bigskip
 \bigskip
 \begin{columns}
 \begin{column}{0.5\textwidth}
@@ -189,7 +191,7 @@ Calcolata la frequenza dei pixel per ogni classee il totale dei pixel per ogni i
 \textbf{Settembre 2023:}
  \begin{itemize}
     \item Foresta: 61\%
-    \item Suolo nudo: 59\%
+    \item Suolo nudo: 39\%
     \end{itemize}
 \end{column}
 \end{columns}
@@ -231,9 +233,6 @@ Osserviamo la differenza tra la banda del vicino infrarosso (NIR) del 2023 con q
 \end{columns}
 \end{frame}
 
-
-
-
 \begin{frame}{Moving Window (2)}
     \bigskip
 \begin{columns}
@@ -253,25 +252,35 @@ Osserviamo la differenza tra la banda del vicino infrarosso (NIR) del 2023 con q
 \end{frame}
 
 \section{Discussione}
-\begin{frame}{Frame Title}
-    
+\begin{frame}{Discussione}
+    \begin{itemize}
+        \item I risultati ottenuti dalle nostre analisi su R sono conformi a quella che è la situazione reale;
+       \pause \item Nonostante il continuo peggioramento climatico e i notevoli incendi estivi in Brasile la riforestazione seguita da monitoraggio sta portando ad un lento ripristino della foresta;
+       \pause \item Questo caso studio ci dimostra come alcune attività, anche se svolte da soli volontari senza l'appoggio di amministrazioni, siano efficaci e necessarie;
+       \pause \item Si tratta del progetto di riforestazione più grande nella storia di Rio De Janeiro con oltre 600000 alberi piantati
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{Frame Title}
+
+\section{Sitografia}
+\begin{frame}{Sitografia}
+    \begin{itemize}
+        \item \url{https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/ndvi/}
+        \item \url{https://dataspace.copernicus.eu/browser}
+        \item \url{https://www.earthdata.nasa.gov/sensors/sentinel-2-msi}
+        \item \url{https://www.itpa.org.br/en/}
     
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{Frame Title}
-    
+\section{Conclusioni}
+\begin{frame}{Grazie per l'attenzione!}
+   Il mio profilo GitHub:
+   \url{https://github.com/beatriiceviola}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{8F291CC2-D1E5-44A9-986D-F33DB0B98668_1_105_c.jpeg}
+\end{figure}
 \end{frame}
-
-\begin{frame}{Frame Title}
-    
-\end{frame}
-
-\begin{frame}{Frame Title}
-    
-\end{frame}
-
 
 \end{document}
