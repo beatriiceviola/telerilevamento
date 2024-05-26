@@ -6,7 +6,7 @@ library(imageRy) #per la funzione im.classify()
 library(patchwork) #per unire i grafici
 
 #Il progetto riguarda una zona di riforestazione nei dintorni di Miguel Pereira in Brasile
-#Dopo gli incendi del 2014 sono stati ripiantati più di 60 mila alberi tra il 2018 e il 2021
+#Dopo gli incendi del 2014 sono stati ripiantati più di 600 mila alberi tra il 2018 e il 2021
 #Osserviamo gli effetti di questa riforestazione
 #Le immagini sono state prese da Copernicus Browser
 #Iniziamo cambiando la nostra work directoy da cui R prenderà i dati che ci servono
