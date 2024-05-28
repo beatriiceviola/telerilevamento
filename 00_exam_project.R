@@ -94,8 +94,8 @@ plot(ndvi2023, col=cold)
 stacksent <- c(ndvi2017, ndvi2023)
 plot(stacksent, col=cold)
 
-#Valutiamo la correlazione tra le due immagini
-pairs(stacksent) #COME SI VALUTA?????
+#Valutiamo la correlazione tra la NDVI delle due immagini
+pairs(stacksent) 
 
 #Dalle due immagini vicine riusciamo a vedere come nel 2023 la vegetazione (che appare verde)
 #sia aumentata, ma come facciamo a capirlo non solo qualitativamente ma anche qunatitativamente?
