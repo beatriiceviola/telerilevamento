@@ -28,7 +28,7 @@ plot(dif)
 
 # Importiamo un'altra immagine dall'Earth Observatory
 #Da qui va ancora modificato
-al <- rast("alaska.jpg") # 
+al <- rast("alaska.jpg") 
 plot(al) # immagine dell'Alaska
 
 #Ora importiamo il dato scaricato da copernicus sul soil
