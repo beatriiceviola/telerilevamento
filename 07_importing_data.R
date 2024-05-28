@@ -28,22 +28,22 @@ plot(dif)
 
 # Importiamo un'altra immagine dall'Earth Observatory
 #Da qui va ancora modificato
-nz <- rast("nz.jpg") # stessa cosa fatta prima???
-plot(nz) # immagine della Nuova Zelanda????
+al <- rast("alaska.jpg") # 
+plot(al) # immagine dell'Alaska
 
-# importiamo il dato scaricato da copernicus sul soil
+#Ora importiamo il dato scaricato da copernicus sul soil
 
-soil <- rast("c_gls_SSM1km_202404210000_CEURO_S1CSAR_V1.2.1.nc") # sempre il nome dell'immagine di com'è salvata nel pc
+soil <- rast("c_gls_SSM1km_202404210000_CEURO_S1CSAR_V1.2.1.nc") 
 plot(soil)
-plot(soil[[1]]) # solo il primo livello che ci interessa
+plot(soil[[1]]) #Ci interessa solo la prima banda
 
-## possiamo usare le coordinate per ritagliare le immagini e focalizzarci su un area
+## Poi possiamo usare le coordinate per ritagliare le immagini e focalizzarci su un area
 
-# prima di tutto si definisce un estensione
-# prima si da la X minima e X massima e la Y min e max
+# Prima di tutto si definisce un estensione
 
-ext <- c(25,30,55,58) # creo il vettore con l'estensione di X (primi due numeri) e Y (terzo e quarto numero)
-soilcrop <- crop(soil, ext) # taglio l'immagine nell'estensione individuata con la funzione crop
-plot(soilcrop) # area d'interessse e errore associato
-plot(soilcrop[[1]]) # solo della prima banda, la nostra variabile d'interesse senza l'errore associato
-# se mantieni sempre le stesse coordinate puoi usarlo anche per diverse immagini sulla stessa area di studio
+ext <- c(25,30,55,58) # creo il vettore con l'estensione di x minima e massima e di y minima e massima
+soilcrop <- crop(soil, ext) # ora ritaglio l'immagine con la funzione crop
+
+#Ora plotto
+plot(soilcrop) # ci dice l' area d'interesse e errore associato
+plot(soilcrop[[1]]) # in questo modo non vedo l'errore associato
