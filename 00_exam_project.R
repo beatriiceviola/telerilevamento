@@ -200,6 +200,9 @@ plot(nir23)
 sd3 <- focal(nir23, matrix(1/9, 3, 3), fun=sd)
 plot(sd3, col=viridis(100))
 
+stack <- c(fc2017, fc2023)
+plot (stack, col=cold)
+pairs(stack)
 #CALCOLIAMO LE COMPONENTI PRINCIPALI
 #2017
 pcimage17 <- im.pca(fc2017)
