@@ -144,7 +144,10 @@ prop23
 perc23 = prop23*100
 perc23 
 
-#Calcoliamo ora la differenza ???? non capisco che significa
+#Calcoliamo ora la differenza tra la banda del NIR del 2017 e quella del 2023
+#è una differenza negativa perché aumentando la vegetazione aumenta la riflettanza del NIR
+#Quindi le parti in rosso sono quelle dove la vegetazione è aumentata
+#(se avessi fatto 2023-2017 sarebbe stata una differenza positiva e la vegetazione in più sarebbe apparsa blu)
 diff_nir = fc2017[[1]] - fc2023[[1]]
 cl <- colorRampPalette(c("red","white","blue"))(100)
 plot(diff_nir, col=cl)
