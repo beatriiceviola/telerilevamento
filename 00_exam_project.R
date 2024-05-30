@@ -16,9 +16,9 @@ setwd("/Users/macbookairair/Downloads/Progetto R")
 #Le immagini sono state fatte da Sentinel-2
 #Le bande sono già decise
 #Prima importiamo le immagini con colori naturali true colors=tc
-#banda 1 = R =
-#banda 2 = G =
-#banda 3 = B =
+#banda 1 = R = red
+#banda 2 = G = green
+#banda 3 = B = blue
 suppressWarnings({
 tc2017 <- rast("tc.sept2017.300m.jpg")
 })
@@ -73,12 +73,14 @@ cold <- colorRampPalette(c("tomato4", "lightpink", "olivedrab")) (100)
 #2017
 dvi2017 <- (fc2017[[1]]-fc2017[[2]])
 plot(dvi2017, col=cold)
-
 #2023
 dvi2023 <- (fc2023[[1]]-fc2023[[2]])
 plot(dvi2023, col=cold)
 
 #Calcoliamo la Normalized Difference Vegetation Index NDVI che varia da 1 a -1
+#La usiamo perché è un indice normalizzato che ci fornsice valori standardizzati che possono
+#essere di più facile interpretazione e possono essere usati per confrontare immagini
+#di dimensioni diverse 
 #NDVI= (NIR-red)/(NIR+red)
 #2017
 ndvi2017 = dvi2017/(fc2017[[1]]+fc2017[[2]])
