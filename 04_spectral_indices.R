@@ -92,10 +92,6 @@ plot(dvi2006, col=cl)
 
 dev.off()
 
-#stacksent
-stackdvi <- c(dvi1992, dvi2006)?????
-pairs(stackdvi)??????
-
 #Normalized DVI
 #si usa quando ho immagini di bit diversi, ovvero andiamo a normalizzare il nostro indice di DVI
 ndvi1992 = dvi1992/(m1992[[1]]+m1992[[2]]) #sempre usare le parentesi in R per sicurezza
