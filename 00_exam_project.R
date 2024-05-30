@@ -200,19 +200,23 @@ plot(nir23)
 sd3 <- focal(nir23, matrix(1/9, 3, 3), fun=sd)
 plot(sd3, col=viridis(100))
 
+
 #CALCOLIAMO LE COMPONENTI PRINCIPALI
 #2017
-pcimage17 <- im.pca(ndvi2017)
+pcimage17 <- im.pca(tc2017)
+tot <- sum(44.124839, 7.201212, 5.136439)
+totpc1 78%, pc2 13%, pc3 9%
 tot <- sum(43.796243, 35.905008, 5.273933)
+
 #tot pc1 52%
-43.796243*100/tot
+43.796243*100/tot 
 #tot pc2 42%
 35.905008*100/tot
 #tot pc3 6%
 5.273933*100/tot
 
 #2023
-pcimage23 <- im.pca(ndvi2023)
+pcimage23 <- im.pca(tc2023)
 total <- sum(37.577013, 22.915812, 3.825119)
 #tot pc1 59%
 37.577013*100/total
