@@ -93,7 +93,7 @@ ndvi2023 = dvi2023/(fc2023[[1]]+fc2023[[2]])
 plot(ndvi2023, col=cold) 
 
 #Creiamo uno stacksent per la NDVI nei 2 anni
-stacksent <- c(ndvi2017, ndvi2023)
+stacksent <- c(fc2017, fc2023) #Così non va? va solo con NDVI xche???
 plot(stacksent, col=cold)
 
 #Valutiamo la correlazione tra la NDVI delle due immagini
@@ -200,12 +200,9 @@ plot(nir23)
 sd3 <- focal(nir23, matrix(1/9, 3, 3), fun=sd)
 plot(sd3, col=viridis(100))
 
-stack <- c(fc2017, fc2023)
-plot (stack, col=cold)
-pairs(stack)
 #CALCOLIAMO LE COMPONENTI PRINCIPALI
 #2017
-pcimage17 <- im.pca(fc2017)
+pcimage17 <- im.pca(ndvi2017)
 tot <- sum(43.796243, 35.905008, 5.273933)
 #tot pc1 52%
 43.796243*100/tot
@@ -215,7 +212,7 @@ tot <- sum(43.796243, 35.905008, 5.273933)
 5.273933*100/tot
 
 #2023
-pcimage23 <- im.pca(fc2023)
+pcimage23 <- im.pca(ndvi2023)
 total <- sum(37.577013, 22.915812, 3.825119)
 #tot pc1 59%
 37.577013*100/total
