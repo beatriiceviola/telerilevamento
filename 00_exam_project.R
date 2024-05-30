@@ -92,13 +92,6 @@ dev.off()
 ndvi2023 = dvi2023/(fc2023[[1]]+fc2023[[2]])
 plot(ndvi2023, col=cold) 
 
-#Creiamo uno stacksent per la NDVI nei 2 anni
-stacksent <- c(fc2017, fc2023) #Così non va? va solo con NDVI xche???
-plot(stacksent, col=cold)
-
-#Valutiamo la correlazione tra la NDVI delle due immagini
-pairs(stacksent) 
-
 #Dalle due immagini vicine riusciamo a vedere come nel 2023 la vegetazione (che appare verde)
 #sia aumentata, ma come facciamo a capirlo non solo qualitativamente ma anche qunatitativamente?
 
@@ -200,30 +193,35 @@ plot(nir23)
 sd3 <- focal(nir23, matrix(1/9, 3, 3), fun=sd)
 plot(sd3, col=viridis(100))
 
+#Creiamo uno stacksent sull'immagine true colors per poi vedere con pairs il livello di correlazione
+#e quindi valutare se è possibile fare o meno una PCA
+stacksent <- c(tc2017, tc2023) 
+plot(stacksent, col=cold)
+
+#Valutiamo la correlazione tra  le due immagini
+pairs(stacksent) 
 
 #CALCOLIAMO LE COMPONENTI PRINCIPALI
 #2017
 pcimage17 <- im.pca(tc2017)
 tot <- sum(44.124839, 7.201212, 5.136439)
-totpc1 78%, pc2 13%, pc3 9%
-tot <- sum(43.796243, 35.905008, 5.273933)
 
-#tot pc1 52%
-43.796243*100/tot 
-#tot pc2 42%
-35.905008*100/tot
-#tot pc3 6%
-5.273933*100/tot
+#tot pc1 78%
+44.124839*100/tot 
+#tot pc2 13%
+7.201212*100/tot
+#tot pc3 9%
+5.136439*100/tot
 
 #2023
 pcimage23 <- im.pca(tc2023)
-total <- sum(37.577013, 22.915812, 3.825119)
-#tot pc1 59%
-37.577013*100/total
-#tot pc2 35%
-22.915812*100/total
-#tot pc3 6%
-3.825119*100/total
+total <- sum(38.364531, 7.559969, 4.076665)
+#tot pc1 77%
+38.364531*100/total
+#tot pc2 15%
+7.559969*100/total
+#tot pc3 8%
+4.076665*100/total
 
 #Ora che, invece, usiamo la tecnica della moving window sulla PC1
 #che è la più rappresentativa (invece che calcolarla su una banda scelta da noi)
