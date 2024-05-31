@@ -20,8 +20,40 @@ setwd("/Users/macbookairair/Downloads/Progetto R")
 #banda 2 = G = green
 #banda 3 = B = blue
 suppressWarnings({
-tc2017 <- rast("tc.sept2017.300m.jpg")
+tc2017 <- rast("tcse17.jpg")
 })
 suppressWarnings({
-tc2023 <- rast("tc.sept2023.300m.jpg")
+tc2023 <- rast("tcag23.jpg")
 })
+
+
+
+#CLASSIFICAZIONE 
+#Classifichiamo con 2 cluster le immagini
+#2017
+class17 <- im.classify(tc2017, num_clusters=2)
+class.names <- c("suolo nudo", "foresta")
+#Plottiamo dando un titolo all'immagine e un nome all classi
+plot(class17, main= "Classificazione 2017", type="classes", levels= class.names)
+
+#2023
+class23 <- im.classify(tc2023, num_clusters=2)
+class.names <- c("foresta", "suolo nudo")
+plot(class23, main= "Classificazione 2023", type="classes", levels=class.names)
+
+#Calcoliamo la frequenza dei pixel presenti in una classe
+#e quella dei pixel presenti nell'altra
+#2017
+freq17 <- freq(class17)
+freq17
+#Calcoliamo il totale dei pixel
+tot17 <- ncell (class17)
+tot17
+#Proporzione
+prop17 = freq17/tot17
+prop17
+#Percentuale 
+#Foresta = 51%
+#Suolo nudo= 49%
+perc17 = prop17*100
+perc17
