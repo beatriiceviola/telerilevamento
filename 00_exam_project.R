@@ -232,22 +232,9 @@ plot(pc17.sd7, col=viridis(100))
 
 #2023
 pc23 <-pcimage23$PC1
-pc23.sd3<-focal(pc23, matrix(1/49, 7, 7), fun=sd)
+pc23.sd3<-focal(pc23, matrix(1/9, 3, 3), fun=sd)
 plot(pc23.sd3, col=viridis(100))
 
 #Facciamo uno stack
 stack <- c(sd3, sd7, pc17.sd7, pc23.sd3)
 plot(stack, col=viridis(100))
-
-
-
-
-
-
-
-
-
-
-
-
-
