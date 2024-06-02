@@ -17,13 +17,13 @@ b8 <- im.import("sentinel.dolomites.b8.tif") #nir
 #Mettiamo insieme le 4 bande per comporre un'immagine satellitare con uno stack
 sentdo <- c(b2, b3, b4, b8)
 
-#Facciamo un plot disponiamo l ebande così:
-#nir on red,red on green, green on blue
+#Facciamo un plot disponiamo le bande così:
+#nir on red, red on green, green on blue
 #quindi ciò che riflette il nir (tipo la vegetazione) appare rosso
 #la componente rossa appare verde e quella verde appare blu
 im.plotRGB(sentdo, r=4, g=3, b=2)
 
-#vediamo quanto le barre sono correlate tra loro
+#Vediamo quanto le barre sono correlate tra loro
 #Si usa l'indice di Pearson che varia da -1 a +1
 #le tre bande rossa, blu e verde sono molto correlate tra loro
 #il nir non è fortemente correlata con nessuna delle altre 3 bande
@@ -55,6 +55,8 @@ plot(pcimage, col=plasma(100))
 
 #La prima immagine PC1 copre molte informazioni e ci restituisce un'immagine simile all'originale
 #PC2 e PC3 invece, avendo meno variabilità ci restituiscono immagine meno chiare, di solo rumore
-#Quindi grazie alla PCA non dobbiamo scegliere più una banda casuale rischiando che non sia la + informativa
-#ma scegliamo la componente + informativa passando da un sistema a 4 dimensioni ad un sistema ad una dimensione
+#Quindi grazie alla PCA non dobbiamo scegliere più una banda casuale rischiando 
+#che non sia la + informativa
+#ma scegliamo la componente + informativa passando da un sistema a 4 dimensioni
+#ad un sistema ad una dimensione
 
