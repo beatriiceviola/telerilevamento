@@ -5,7 +5,7 @@
 \usetheme{Frankfurt}
 \usecolortheme{seahorse}
 
-\logo{\includegraphics[width=1.5cm]{logounibo.jpeg}} 
+\logo{\includegraphics[width=1cm]{logounibo.jpeg}} 
 
 \title{Effetti delle riforestazione a Miguel Pereira, Brasile}
 \date{}
@@ -85,6 +85,7 @@ NDVI=\frac{NIR-RED}{NIR+RED}
     \end{equation}
 \end{itemize}
 \bigskip
+\bigskip
 Sono stati confrontati gli indici calcolati a Settembre 2017 con quelli calcolati a Settembre 2023 
 \end{frame}
 
@@ -94,7 +95,7 @@ Funzioni utilizzate:
 \begin{columns}
 \begin{column}{0.5\textwidth}
 \begin{itemize}
-     \item    \texttt{setwd()} 
+    \item    \texttt{setwd()} 
     \item    \texttt{rast} 
     \item    \texttt{par} 
     \item    \texttt{im.plotRGB}
@@ -111,31 +112,13 @@ Funzioni utilizzate:
     \item    \texttt{data.frame}
     \item    \texttt{ggplot}
     \item    \texttt{focal}
-    \item    \texttt{im.pca}      \end{itemize}
+    \item    \texttt{im.pca}      
+    \end{itemize}
 \end{column}
 \end{columns}
 \end{frame}
 
-\section{Risultati DVI e NDVI}
-\begin{frame}{Risultati DVI}
-Risultati per l'indice DVI dove il verde rappresenta la vegetazione e il rosa il suolo nudo
-\bigskip
-\begin{columns}
-\begin{column}{0.5\textwidth}
-\begin{center}
-    \includegraphics[width=\textwidth]{dvi2017.png}
-    \caption{DVI 2017}
-\end{center}
-\end{column}
-\begin{column}{0.5\textwidth}  
-    \begin{center}
-     \includegraphics[width=\textwidth]{dvi2023.png}
-     \caption{DVI 2023}
-     \end{center}
-\end{column}
-\end{columns}
-\end{frame} 
-
+\section{Risultati NDVI}
 \begin{frame}{Risultati NDVI}
 Risultati per l'indice NDVI dove il verde rappresenta la vegetazione e il rosa il suolo nudo
 \bigskip
@@ -175,8 +158,7 @@ Quantifichiamo il cambiamento con \texttt{im.classify}
 
 
 \begin{frame}{Quantificazione dei pixel}
-Calcolata la frequenza dei pixel per ogni classe e il totale dei pixel per ogni immagine ne 
-otteniamo poi la percentuale osservando che:
+Calcolata la frequenza dei pixel per ogni classe e il totale dei pixel per ogni immagine ne otteniamo poi la percentuale osservando che:
 \bigskip
 \bigskip
 \bigskip
@@ -199,15 +181,15 @@ otteniamo poi la percentuale osservando che:
 \end{frame}
 
 
-\begin{frame}{Frame Title}
-Osserviamo la differenza tra la banda del vicino infrarosso (NIR) del 2023 con quella del 2017
+\begin{frame}{Differenza tra bande}
+Osserviamo la differenza tra la banda del vicino infrarosso (NIR) del 2017 con quella del 2023
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{diff23-17.png}
 \end{figure}
 \end{frame}
 
-\begin{frame}{Frame Title}
+\begin{frame}{Grafici}
     Otteniamo i graifici
 \begin{figure}
     \centering
@@ -217,36 +199,60 @@ Osserviamo la differenza tra la banda del vicino infrarosso (NIR) del 2023 con q
 
 \section{Risultati PCA}
 \begin{frame}{Moving Window (1)}
-    \bigskip
+Con la tecnica della moving window, in particolare una finestra 3x3 pixel, calcoliamo la deviazione standard sulla banda del NIR
+\bigskip
 \begin{columns}
 \begin{column}{0.5\textwidth}
 \begin{center}
     \includegraphics[width=\textwidth]{devstandard su NIR 17.png}
-    \caption{DVI 2017}
+    \caption{2017}
 \end{center}
 \end{column}
 \begin{column}{0.5\textwidth}  
     \begin{center}
      \includegraphics[width=\textwidth]{devstandard su Nir 23.png}
-     \caption{DVI 2023}
+     \caption{2023}
      \end{center}
 \end{column}
 \end{columns}
 \end{frame}
 
+\begin{frame}{Analisi delle componenti principali (PCA)}
+Avendo verificato la correlazione tra bande delle due immagini a colori naturali si è fatta l'analisi delle componenti principali attraverso la funzione \texttt{im.pca()} di \texttt{imageRy}
+\bigskip
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\textbf{PC1 2017}
+\begin{center}
+    \includegraphics[width=\textwidth]{PCA1 2017.png}
+    \caption{78\% della variabilità}
+\end{center}
+\end{column}
+\begin{column}{0.5\textwidth} 
+\textbf{PC1 2023}
+    \begin{center}
+     \includegraphics[width=\textwidth]{PCA 2023.png}
+     \caption{77 \% della variabilità}
+     \end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+
 \begin{frame}{Moving Window (2)}
+Sempre con una finestra 3x3 pixel calcoliamo poi la deviazione standard sulla componente principale 1
     \bigskip
 \begin{columns}
 \begin{column}{0.5\textwidth}
 \begin{center}
-    \includegraphics[width=\textwidth]{pca 17.png}
-    \caption{DVI 2017}
+    \includegraphics[width=\textwidth]{pca2017.png}
+    \caption{2017}
 \end{center}
 \end{column}
 \begin{column}{0.5\textwidth}  
     \begin{center}
-     \includegraphics[width=\textwidth]{pca 23.png}
-     \caption{DVI 2023}
+     \includegraphics[width=\textwidth]{pca2023.png}
+     \caption{2023}
      \end{center}
 \end{column}
 \end{columns}
@@ -255,20 +261,10 @@ Osserviamo la differenza tra la banda del vicino infrarosso (NIR) del 2023 con q
 \section{Discussione}
 \begin{frame}{Discussione}
     \begin{itemize}
-        \item 
-I risultati ottenuti dalle nostre analisi su R sono conformi 
-a quella che è la situazione reale;
-       \pause \item 
-Nonostante il continuo peggioramento climatico e i notevoli incendi estivi 
-in Brasile la riforestazione seguita da monitoraggio sta portando 
-ad un lento ripristino della foresta;
-       \pause \item 
-Questo caso studio ci dimostra come alcune attività,
-anche se svolte da soli volontari senza l'appoggio di amministrazioni, 
-siano efficaci e necessarie;
-       \pause \item 
-Si tratta del progetto di riforestazione più grande nella storia di Rio De Janeiro
-con oltre 600000 alberi piantati
+        \item I risultati ottenuti dalle nostre analisi su R sono conformi a quella che è la situazione reale;
+       \pause \item Nonostante il continuo peggioramento climatico e i notevoli incendi estivi in Brasile la riforestazione seguita da monitoraggio sta portando ad un lento ripristino della foresta;
+       \pause \item Questo caso studio ci dimostra come alcune attività, anche se svolte da soli volontari senza l'appoggio di amministrazioni, siano efficaci e necessarie;
+       \pause \item Si tratta del progetto di riforestazione più grande nella storia di Rio De Janeiro con oltre 600000 alberi piantati
     \end{itemize}
 \end{frame}
 
