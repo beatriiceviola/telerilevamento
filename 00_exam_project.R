@@ -174,15 +174,9 @@ ggtitle("Area d'indagine nel 2023") + xlab("Classi") + ylab("Valori percentuali"
 theme(plot.title = element_text(face = "bold", hjust = 0.5)) 
 
 #Visualizziamo i due grafici insieme con patchwork
-p1 <-ggplot(tabout, aes(x=class, y=y2017, color=class)) 
-+ geom_bar(stat="identity", aes(fill=class), width= 0.7)
-+ ylim(c(0,100))
-+ggtitle("Area d'indagine nel 2017") + xlab("Classi") + ylab("Valori percentuali")+
+p1 <-ggplot(tabout, aes(x=class, y=y2017, color=class)) + geom_bar(stat="identity", aes(fill=class), width= 0.7)+ ylim(c(0,100))+ggtitle("Area d'indagine nel 2017") + xlab("Classi") + ylab("Valori percentuali")+
 theme(plot.title = element_text(face = "bold", hjust = 0.5)) 
-p2 <-ggplot(tabout, aes(x=class, y=y2023, color=class))
-+ geom_bar(stat="identity", aes(fill=class),width= 0.7)
-+ ylim(c(0,100))
-+ggtitle("Area d'indagine nel 2023") + xlab("Classi") + ylab("Valori percentuali")+
+p2 <-ggplot(tabout, aes(x=class, y=y2023, color=class))+ geom_bar(stat="identity", aes(fill=class),width= 0.7)+ ylim(c(0,100))+ggtitle("Area d'indagine nel 2023") + xlab("Classi") + ylab("Valori percentuali")+
 theme(plot.title = element_text(face = "bold", hjust = 0.5)) 
 p1 + p2
 
@@ -201,13 +195,19 @@ plot(nir23)
 sd3 <- focal(nir23, matrix(1/9, 3, 3), fun=sd)
 plot(sd3, col=viridis(100))
 
-#Creiamo uno stacksent sull'immagine true colors per poi vedere con pairs il livello di correlazione
+#Creiamo uno stacksent sulle due immagini true colors per poi vedere 
+#con pairs il livello di correlazione
 #e quindi valutare se è possibile fare o meno una PCA
-stacksent <- c(tc2017, tc2023) 
-plot(stacksent, col=cold)
+stack17 <- c(tc2017[[1]], tc2017[[2]], tc2017[[3]]) 
+plot(stack17, col=cold)
 
-#Valutiamo la correlazione tra  le due immagini
-pairs(stacksent) 
+#Valutiamo la correlazione tra le bande del 2017
+pairs(stack17) 
+
+#FAcciamo la stessa cosa per il 2023
+stack23 <- c(tc2023[[1]], tc2023[[2]], tc2023[[3]])
+plot(stack23, col=cold)
+pairs(stack23)
 
 #CALCOLIAMO LE COMPONENTI PRINCIPALI
 #2017
