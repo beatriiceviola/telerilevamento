@@ -4,7 +4,7 @@
 library(imageRy)
 library(terra)
 
-#Facciamo l alista dei dati disponibili
+#Facciamo la lista dei dati disponibili
 im.list()
 
 #Importiamo un'immagine di Sentinel
@@ -21,7 +21,7 @@ im.plotRGB (sent, r=1, g=2, b=3) #la vegetazione riflette il nir e appare rossa
 im.plotRGB (sent, r=2, g=1, b=3) #la vegetazione appare verde
 
 #Calcoliamo la deviazione standard su una banda che scegliamo noi
-nir <- sent[[1]]  #associo l aprima banda ad un oggetto
+nir <- sent[[1]]  #associo la prima banda ad un oggetto
 cl <- colorRampPalette(c("red","orange","yellow"))(100) #cambio la scala dei colori
 plot(nir, col=cl) #plotto l'immagine
 
@@ -39,16 +39,19 @@ plot(sd3)
 install.packages("viridis")
 library(viridis) #e poi richiamiamolo
 
-#Facciamo una colorRampPalette, non serve specificare i colori perché usiamo quelli già disponibili su viridis
-viridisc <- colorRampPalette(viridis(7))(256) #7 è il settimo blocco che è quello che ci interessa, va sempre specificato
+#Facciamo una colorRampPalette, non serve specificare i colori 
+#perché usiamo quelli già disponibili su viridis
+viridisc <- colorRampPalette(viridis(7))(256) 
+#7 è il settimo blocco che è quello che ci interessa, va sempre specificato
 plot(sd3, col= viridisc) #plottiamo la deviazione standard con questi nuovi colori
 
 #Calcoliamo la deviazione standard di una finestra 7x7
-sd7 <- focal (nir, matrix(1/49,7,7), fun=sd) #righe e colonne sono 7, la finestra totale ha 49 pixel
-plot(sd7, col=viridisc) #la deviazione standard è più grande perché prendiamo un'area+ grande con questa finestra
+sd7 <- focal (nir, matrix(1/49,7,7), fun=sd) #righe e colonne sono 7, window totale ha 49 pixel
+plot(sd7, col=viridisc) 
+#la deviazione standard è più grande perché prendiamo un'area più grande con questa finestra
 
 #Calcoliamo la deviazione standard di una finestra 13x13
-sd13 <- focal(nir, matrix(1/169, 13, 13), fun=sd)#righe e colonne sono 13, la finestra totale ha 169 pixel
+sd13 <- focal(nir, matrix(1/169, 13, 13), fun=sd)#righe e colonne sono 13, window totale ha 169 pixel
 plot(sd13, col= viridisc)
 
 #Con finestre più grandi ho immagini meno risolute
@@ -57,6 +60,3 @@ plot(sd13, col= viridisc)
 #Con uno stacksent plotto le 3 immagini insieme
 sdstack <- c(sd3, sd7, sd13) #creo lo stack
 plot(sdstack, col=viridisc) #plotto 
-
-
-
