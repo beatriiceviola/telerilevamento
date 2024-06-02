@@ -51,7 +51,7 @@ dev.off()
 
 #Facciamo un plot RGB per visualizzare meglio l'immagine
 #2017
-im.plotRGB(fc2017, r=1, g=2 , b=3) #NIR on red, la vegetazione apparirà rossa e il suolo nudo azzurrino 
+im.plotRGB(fc2017, r=1, g=2 , b=3) #NIR on red, veg= rossa, suolo nudo= azzurrino
 im.plotRGB(fc2017, r=2, g=1 , b=3) #NIR on green, veg= verde, suolo nudo= rosino
 
 #Facciamo la stessa cosa per il 2023
