@@ -12,7 +12,7 @@ library(ggplot2)
 im.list()
 
 #Importiamo l'immagine che ci interessa 
-#questa volta si tratta di un immagine del Sole del satellire Solar Orbiter
+#questa volta si tratta di un immagine del Sole del satellite Solar Orbiter
 sun <- im.import("Solar_Orbiter_s_first_views_of_the_Sun_pillars.jpg") 
 
 #Classifichiamo le immagini con la funzione im.classify()
@@ -25,13 +25,15 @@ im.classify(sun, num_clusters=3)
 m1992 <- im.import("matogrosso_l5_1992219_lrg.jpg") 
 m2006 <- im.import("matogrosso_ast_2006209_lrg.jpg")
 
-#Classifichiamole
+#Classifichiamole 
+#Alcuni pixel non sono immediatamente riconducibili ad una classe o ad un'altra
+#Per questo può succedere che riplottando queste funzioni il risultato cambii leggermente
 #1992
 #qui scegliamo 2 clusters anziché 3 come prima
 m1992c <- im.classify(m1992, num_clusters=2)
 
 #1992
-#Le classi 1 e 2 sono casuali, quindi mi a quale classe corrisponde cosa
+#Le classi 1 e 2 sono casuali, quindi mi scrivo a quale classe corrisponde cosa
 #class 1 = human
 #class 2 = forest
 
@@ -93,7 +95,7 @@ class <- c("forest", "human") # la prima colonna è la classe
 p1992 <- c(83, 17) #la seconda sono i valori percentuali del 1992 per ogni classe
 p2006 <- c(45, 55) #la terza colonna sono i valori percentuali del 2006 per ogni classe
 
-#ora creiamo il vero e proprio dataframe mettendo insieme i 3 vettori
+#Ora creiamo il vero e proprio dataframe mettendo insieme i 3 vettori
 #uso la funzione data.frame()
 tabout <- data.frame (class, p1992, p2006)
 tabout #richiamandola visualizzo la tabella
@@ -112,7 +114,6 @@ tabout #richiamandola visualizzo la tabella
 ggplot (tabout, aes(x=class, y=p1992, color=class))+ geom_bar(stat="identity", fill="white")
 #2006
 ggplot (tabout, aes(x=class, y=p2006, color=class))+ geom_bar(stat="identity", fill="white")
-
 
 #Installiamo ora un nuovo pacchetto
 #Il pacchetto patchwork ci permette di unire i due grafici
