@@ -12,7 +12,8 @@ a+b #esprimiamo la stessa operazione di prima, quindi il risultato è sempre 82
 #attraverso la funzione concatenate creiamo un vettore 
 #assegniamo sempre alla funzione un oggetto, flowers in questo caso
 
-flowers <- c(3, 6, 8, 10, 15, 18) #se non avessi usato la fuznione c(), R avrebbe assegnato all'oggeto flowers solo il primo numero
+flowers <- c(3, 6, 8, 10, 15, 18) #se non avessi usato la fuznione c(),
+#R avrebbe assegnato all'oggeto flowers solo il primo numero
 flowers
 
 insects <- c(10,  16, 25, 42, 61, 73) #altro esempio con la funzione concatenate
@@ -30,7 +31,7 @@ plot (flowers, insects, col= "darkmagenta")
 
 #poi posso cambiare i simboli usando pch=
 #e rendo pch uguale a un numero che corrisponde a un simbolo
-#(per capire che numero usare in base alsimbolo che voglio uso tabelle specifiche)
+#(per capire che numero usare in base al simbolo che voglio uso tabelle specifiche)
 plot (flowers, insects, col= "darkmagenta", pch= 24)
 
 #ancora posso cambiare la dimensione dei simboli con cex=
