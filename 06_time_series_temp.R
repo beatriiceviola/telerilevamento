@@ -8,7 +8,7 @@ library(imageRy)
 #Facciamo la lista delle immagini disponibili su imageRy
 im.list()
 
-#Importimao le immagini dell'European Nitrogen
+#Importiamo le immagini dell'European Nitrogen
 EN01<- im.import("EN_01.png") #gennaio 2020
 EN13<- im.import("EN_13.png") #marzo 2020, durante la pandemia del covid
 #anche se la rainbow color non è bellissima non possiamo modificarla perché sono immagini già elaborate
