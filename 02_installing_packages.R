@@ -32,4 +32,4 @@ library(imageRy)
 
 #Quando chiudo R devo richiamare i pacchetti che mi servono 
 #ogni volta con library(),  solo che essendo pacchetti che ho già installato
-#e che quindi sono presenti su R, non ho bisogno di mettere l evirgolette
+#e che quindi sono presenti su R, non ho bisogno di mettere le virgolette
