@@ -65,7 +65,8 @@ im.plotRGB(fc2023, 1, 2, 3) # NIR on R
 im.plotRGB(fc2017, 2, 1, 3) # NIR on G
 im.plotRGB(fc2023, 2, 1, 3) # NIR on G
 
-#Scegliamo una palette di colori (rosso, rosa verde in modo che la vegetazione appaia sempre verde e il suolo nudo rosino)
+#Scegliamo una palette di colori 
+#(rosso, rosa verde in modo che la vegetazione appaia sempre verde e il suolo nudo rosino)
 cold <- colorRampPalette(c("tomato4", "lightpink", "olivedrab")) (100)
 
 #DVI e NDVI
@@ -140,7 +141,8 @@ perc23
 #Calcoliamo ora la differenza tra la banda del NIR del 2017 e quella del 2023
 #è una differenza negativa perché aumentando la vegetazione aumenta la riflettanza del NIR
 #Quindi le parti in rosso sono quelle dove la vegetazione è aumentata
-#(se avessi fatto 2023-2017 sarebbe stata una differenza positiva e la vegetazione in più sarebbe apparsa blu)
+#(se avessi fatto 2023-2017 sarebbe stata una differenza positiva
+#e la vegetazione in più sarebbe apparsa blu)
 diff_nir = fc2017[[1]] - fc2023[[1]]
 cl <- colorRampPalette(c("red","white","blue"))(100)
 plot(diff_nir, col=cl)
@@ -172,9 +174,15 @@ ggtitle("Area d'indagine nel 2023") + xlab("Classi") + ylab("Valori percentuali"
 theme(plot.title = element_text(face = "bold", hjust = 0.5)) 
 
 #Visualizziamo i due grafici insieme con patchwork
-p1 <-ggplot(tabout, aes(x=class, y=y2017, color=class)) + geom_bar(stat="identity", aes(fill=class), width= 0.7)+ ylim(c(0,100))+ggtitle("Area d'indagine nel 2017") + xlab("Classi") + ylab("Valori percentuali")+
+p1 <-ggplot(tabout, aes(x=class, y=y2017, color=class)) 
++ geom_bar(stat="identity", aes(fill=class), width= 0.7)
++ ylim(c(0,100))
++ggtitle("Area d'indagine nel 2017") + xlab("Classi") + ylab("Valori percentuali")+
 theme(plot.title = element_text(face = "bold", hjust = 0.5)) 
-p2 <-ggplot(tabout, aes(x=class, y=y2023, color=class)) + geom_bar(stat="identity", aes(fill=class),width= 0.7)+ ylim(c(0,100))+ggtitle("Area d'indagine nel 2023") + xlab("Classi") + ylab("Valori percentuali")+
+p2 <-ggplot(tabout, aes(x=class, y=y2023, color=class))
++ geom_bar(stat="identity", aes(fill=class),width= 0.7)
++ ylim(c(0,100))
++ggtitle("Area d'indagine nel 2023") + xlab("Classi") + ylab("Valori percentuali")+
 theme(plot.title = element_text(face = "bold", hjust = 0.5)) 
 p1 + p2
 
