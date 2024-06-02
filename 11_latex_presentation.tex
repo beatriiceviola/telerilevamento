@@ -1,4 +1,4 @@
-% Iniziamo l anostra presentazione con la funzione \documentclass{beamer}
+% Iniziamo la nostra presentazione con la funzione \documentclass{beamer}
 \documentclass{beamer} 
 \usepackage{graphicx} % Installiamo il pacchetto necessario per inserire immagini
 
@@ -17,7 +17,8 @@
 
 \maketitle
 
-% A cosa serve??????
+% Grazie a questa parte di codice prima di passare da una sezione ad un'altra
+% viene inserita una slide dell'indice che mi dice a quale sezione stiamo passando
 \AtBeginSection[]
 {
 \begin{frame}{Outline}
@@ -87,11 +88,11 @@ In this work I used the following formula:
    % \label{fig:enter-label} % Anche la label nelle presentazioni non serve
 \end{figure}
 
-
 % Inseriamo 2 immagini una accanto all'altra
 \begin{figure} 
     \centering 
-    \includegraphics[width=0.4\linewidth]{apodemus.png} %in questo caso la dimensione è + piccola perché ho 2 immagini vicine
+    \includegraphics[width=0.4\linewidth]{apodemus.png} %in questo caso la dimensione è + 
+%piccola perché ho 2 immagini vicine
     \pause \includegraphics[width=0.4\linewidth]{apodemus.png} 
 \end{figure} 
 \end{frame}
@@ -103,13 +104,13 @@ In this work I used the following formula:
     \includegraphics[width=0.3\linewidth]{apodemus.png} 
     \includegraphics[width=0.3\linewidth]{apodemus.png} \\ % vado a capo
     \includegraphics[width=0.3\linewidth]{apodemus.png} 
-    \includegraphics[width=0.3\linewidth]{apodemus.png} \\ vado a capo
+    \includegraphics[width=0.3\linewidth]{apodemus.png} \\ %vado a capo
 \end{figure}
 
 % Inseriamo un testo che ci dica da dove l'immagine è stata presa
 \bigskip % Lasciamo uno spazio grande
 \centering % Mettiamo il testo centrale
-\scriptsize{Viola et al. (2024)} % Se uso delle citazioni le metto tutte con questa funzione????
+\scriptsize{Viola et al. (2024)} % Se uso delle citazioni le metto tutte con questa funzione
 \end{frame}
 
 % Mettiamo il nostro testo e l'immagine vicini
