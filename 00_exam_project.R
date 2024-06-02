@@ -2,7 +2,7 @@
 library(terra) #per la funzione rast
 library(ggplot2) #per costruire grafici
 library(viridis) #per avere una colorRampoPalette adatta ai daltonici
-library(imageRy) #per la funzione im.classify()
+library(imageRy) #per la funzione im.classify(), im.pca() e im.plotRGB()
 library(patchwork) #per unire i grafici
 
 #Il progetto riguarda una zona di riforestazione nei dintorni di Miguel Pereira in Brasile
