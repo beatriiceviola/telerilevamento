@@ -9,9 +9,9 @@ library(imageRy)
 im.list()
 
 #Importiamo un'immagine della lista con la funzione im.import("")
-#in particolare l'immagine b2 da Sentinel che è la banda che corrisponde alla lunhgezza d'onda del blu
+#in particolare l'immagine b2 da Sentinel che è la banda che corrisponde alla lunghezza d'onda del blu
 im.import("sentinel.dolomites.b2.tif")
-#e ora ssegniamogli un oggetto
+#e ora assegniamogli un oggetto
 b2 <- im.import("sentinel.dolomites.b2.tif")
 
 #Plot
@@ -51,27 +51,28 @@ par(mfrow=c(2,2))
 
 #questa funzione crea la cornice (che nel nostro esempio è 2x2)
 #e ora dobbiamo inserire all'interno di questa cornice le nostre immagini
-#quindile plottiamo tutte e 4 di nuovo
+#quindi le plottiamo tutte e 4 di nuovo
 plot(b2, col=clch)
 plot(b3, col=clch)
 plot(b4, col=clch)
 plot(b8, col=clch)
 
-#Esercizio: polttare le 4 immagini in una sola righa
+#Esercizio: polttare le 4 immagini in una sola riga
 par(mfrow=c(1,4)) #Essendo 4 immagini per avere una sola riga dovrò avere 4 colonne
 plot(b2, col= clch)
 plot(b3, col=clch)
 plot(b4, col=clch)
 plot(b8, col=clch)
 
-#STACKSENT??????
+#STACKSENT
+#Attraverso lo stack unisco le bande per formare un'immagine satellitare
 #Prima creiamo un vettore con le nostre 4 bande grazie alla funzione concatenate
 #e poi lo associamo ad un oggetto
 stacksent<-c(b2,b3,b4,b8)
 #poi lo plottiamo
 plot(stacksent, col=clch)
 #sebbene sia più rapido del par() usato prima,
-#in questo caso il multiframe è sempre di 2x2 ???????????
+#in questo caso il multiframe è sempre di 2x2 
 
 #Se voglio cancellare l'immagine plottata uso la funzione
 dev.off()
@@ -105,7 +106,7 @@ im.plotRGB(stacksent, 3, 2, 1 ) #per semplicità posso anche evitare di scrivere
 
 #plottiamo l'immagine con l'infrarosso al posto del rosso
 #nir on red
-#quindi tutto ciò che riflette l'infrarosso, come l avegetazione, ora lo visualizzo rosso
+#quindi tutto ciò che riflette l'infrarosso, come la vegetazione, ora lo visualizzo rosso
 im.plotRGB(stacksent, 4, 2, 1 )
 
 #oppure con l'infrarosso al posto del verde
@@ -135,5 +136,6 @@ im.plotRGB(stacksent, 3, 2, 4 ) #nir on blue
 
 #correlations of information
 pairs(stacksent)
-#ci fa vedere che l'infrarosso non è correlato alle altre bande, mentre le altre bande sono ben correlate tra loro
+#ci fa vedere che l'infrarosso non è correlato alle altre bande
+#mentre le altre bande sono ben correlate tra loro
 #questo ci fa capire perché l'infrarosso aggiunge informazioni
