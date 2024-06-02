@@ -65,10 +65,10 @@ im.plotRGB(m2006, r=2, g=3, b=1) #2006 on blue
 
 
 #Calcoliamo il Difference Vegetation Index (DVI)
-#questo ci serve perché il nostro occhio può valutare solo qualitativamente 
+#Questo indice ci serve perché il nostro occhio può valutare solo qualitativamente 
 #la perdita di vegetazione, con questo indice lo vediamo quantitativamente
 #per ogni pixel della banda del nir sottrae lo stesso pixel della banda del red
-#dato che l'immagine è a 8 bit il DIV può variare da 255 (se nir è max e red è 0)
+#dato che l'immagine è a 8 bit il DVI può variare da 255 (se nir è max e red è 0)
 #a -255 (se red è max e nir è 0)
 dvi1992 = m1992[[1]] - m1992 [[2]] 
 #qui l'uguale indica sempre un'associazione come la freccia
