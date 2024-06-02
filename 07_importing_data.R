@@ -4,7 +4,7 @@
 library(terra)
 library(imageRy)
 
-#Ora spieghiamo al sistema in quale cartella del nostro PC estrarrei dati che vorremo utilizzare
+#Ora spieghiamo al sistema in quale cartella del nostro PC estrarre i dati che vorremo utilizzare
 #setwd sta per set working directory
 #L'argomento di questa funzione è il percorso della cartella
 setwd("/Users/macbookairair/Downloads/Cartella 1/1.png") #perche non va???
@@ -27,7 +27,6 @@ dif=eclissi[[1]] - eclissi[[2]]
 plot(dif)
 
 # Importiamo un'altra immagine dall'Earth Observatory
-#Da qui va ancora modificato
 al <- rast("alaska.jpg") 
 plot(al) # immagine dell'Alaska
 
