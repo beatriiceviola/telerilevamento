@@ -1,0 +1,10 @@
+library(terra)
+library(imageRy)
+
+setwd("/Users/macbookairair/Downloads/Progetto R")
+
+suppressWarnings({
+tc2017 <- rast("caorle.jpg")
+})
+
+pca <- im.pca()
