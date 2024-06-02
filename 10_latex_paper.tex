@@ -13,10 +13,9 @@
 \linenumbers % funzione che numera le righe del testo
 
 % Inizo del mio documento, metto il titolo l'autore e la data
-
 \title{My first LaTeX doc - Chop Suey!}
 \author{Beatrice Viola}
-\date{10 Maggio 2024} % permette di cambiare l'impostazione della data a seconda degli argomenti che vengono passati. Se non è presente, pesca direttamente la data dal sistema impostandola come mm/gg/aa. ????????
+\date{10 Maggio 2024} % permette di cambiare l'impostazione della data a seconda degli argomenti che vengono passati.
 
 \begin{document} % dopo un begin ci deve essere sempre un end che serve per chiudere l'operazione
 
@@ -48,7 +47,7 @@ Why'd you leave the keys upon the table? You wanted to
 \label{sec:intro} % assegno un'etichetta alla sezione così ogni volta che voglio richiamarla posso farlo con la fuznione \ref{} 
 % Se sbaglio il nome della sezione compariranno dei ?? nella porzione in cui richiamo la \ref{}
 %In questo modo posso valutare molto velocemente se sono presenti errori
-%Per togliere il numero della sezione basta bettere un asterisco * prima delle parentesi graffe {}. 
+%Per togliere il numero della sezione basta mettere un asterisco * prima delle parentesi graffe {}. 
 
 \textbf{I don't think you trust} - \textb mette il suo argomento dentro le graffe in grassetto
 In my self-righteous suicide
@@ -69,7 +68,7 @@ I cry when angels deserve to die
 la canzone la trovi a:
 \url{https://www.youtube.com/watch?v=CSvFpBOe8eY&themeRefresh=1} 
 
-%Andiamo alla pagina dopo per essere più ordinati, usiamo la seguente funzion
+%Andiamo alla pagina dopo per essere più ordinati, usiamo la seguente funzione
 \newpage{} 
 
 %Nuova sezione: Metodi
@@ -104,7 +103,6 @@ F = \sqrt[2]{G \frac{m_1\times m_2}{d^2}} % \sqrt per mettere sotto radice,[2] m
 \section{Discussion}
 Possiamo discutere i risultati, come abbiamo visto \ref{sec:intro} % richiamo l'etichetta, lable, della sezione Introduzione
 
-
 %Facciamo un classico elenco puntato con la funzione \begin{itemize}
 In questa tesi abbiamo osservato:
 \begin{itemize}
@@ -113,7 +111,7 @@ In questa tesi abbiamo osservato:
     \item Barbagianni
 \end{itemize} % il begin deve sempre essere accompagnato da un end
 
-%Per fare un elenco puntato numerato uso l afunzione \begin{enumerate}
+%Per fare un elenco puntato numerato uso la funzione \begin{enumerate}
 \begin{enumerate} 
     \item Musica
     \item Astronauti
@@ -126,7 +124,7 @@ In questa tesi abbiamo osservato:
 \begin{figure}
     \centering % Per centrare la figura nel foglio
     \includegraphics[width=\textwidth]{inter.png} %[width=\textwidth] l'immagine mi viene grande quanto il testo
-%Se volessi l'immagine più pccola del testo metterei width=0.5 ecc...
+%Se volessi l'immagine più piccola del testo metterei width=0.5 ecc...
 %per inserire un'immagine questa deve essere stata scaricata sul computer
     \caption{Apodemus sylvaticus} % Didascalia dell'immagine
     
