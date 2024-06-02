@@ -40,9 +40,9 @@ plot(difEN, col=cl)
 #Prendiamo dati ottenuti da Copernicus che sono a 16 bit, molto informativi
 #il range però non arriva a 65000 ma attorno ai 15000
 #Usiamo un proxy, quindi non usiamo direttamente il ghiaccio 
-#ma un parametro che lo rappresenta ovvero l atemperatura del suolo
+#ma un parametro che lo rappresenta ovvero la temperatura del suolo
 
-#associazione oggetto/funzione 
+#Associazione oggetto/funzione 
 g2000<- im.import("greenland.2015.tif") #2000
 clg<-colorRampPalette(c("black", "blue", "white", "red"))(100) #cambio la scala dei colori
 plot(g2000, col=clg) #Plottiamo l'immagine con i nuovi colori, il nero è la temperatura + bassa
@@ -52,7 +52,7 @@ g2005<- im.import("greenland.2005.tif") #2005
 g2010<- im.import("greenland.2010.tif") #2010
 g2015<- im.import("greenland.2015.tif") #2015
 
-#Metto tutte e 4 le immagini dal 2000 al 2015 vicine in 2 rige e 2 colonne
+#Metto tutte e 4 le immagini dal 2000 al 2015 vicine in 2 righe e 2 colonne
 par(mfrow=c(2,2))
 plot(g2000, col=clg)
 plot(g2005, col=clg)
@@ -62,7 +62,7 @@ plot(g2015, col=clg)
 dev.off()
 
 #Oppure invece che usare la funzione par() posso fare uno stack
-#con lo stack trasformo le immagini in bande di una stessa immagine??????????
+#con lo stack trasformo le immagini in bande di una stessa immagine
 greenland <-c(g2000,g2005,g2010,g2015)
 plot(greenland, col=clg)
 
@@ -78,7 +78,4 @@ im.plotRGB(greenland, r=1, g=2, b=4)
 #con il rosso vedo le T più alte nel 2000
 #con il verde quelle del 2005
 #con il blu quelle del 2015
-#Ovviamente possousarlo solo per immagini uguali
-
-
-
+#Ovviamente posso usarlo solo per immagini uguali
