@@ -36,10 +36,8 @@ soil <- rast("c_gls_SSM1km_202404210000_CEURO_S1CSAR_V1.2.1.nc")
 plot(soil)
 plot(soil[[1]]) #Ci interessa solo la prima banda
 
-## Poi possiamo usare le coordinate per ritagliare le immagini e focalizzarci su un area
-
-# Prima di tutto si definisce un estensione
-
+#Poi possiamo usare le coordinate per ritagliare le immagini e focalizzarci su un area
+#Prima di tutto si definisce un estensione
 ext <- c(25,30,55,58) # creo il vettore con l'estensione di x minima e massima e di y minima e massima
 soilcrop <- crop(soil, ext) # ora ritaglio l'immagine con la funzione crop
 
