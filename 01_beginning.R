@@ -13,7 +13,7 @@ a+b #esprimiamo la stessa operazione di prima, quindi il risultato è sempre 82
 #assegniamo sempre alla funzione un oggetto, flowers in questo caso
 
 flowers <- c(3, 6, 8, 10, 15, 18) #se non avessi usato la fuznione c(),
-#R avrebbe assegnato all'oggeto flowers solo il primo numero
+#R avrebbe assegnato all'oggetto flowers solo il primo numero
 flowers
 
 insects <- c(10,  16, 25, 42, 61, 73) #altro esempio con la funzione concatenate
