@@ -35,7 +35,7 @@ plot(nir, col=cl) #plotto l'immagine
 sd3 <- focal(nir, matrix(1/9, 3, 3), fun=sd)
 plot(sd3)
 
-#installinamo un nuovo pacchetto che ci permette di usare colori adatti anche ai daltonici
+#installiamo un nuovo pacchetto che ci permette di usare colori adatti anche ai daltonici
 install.packages("viridis")
 library(viridis) #e poi richiamiamolo
 
