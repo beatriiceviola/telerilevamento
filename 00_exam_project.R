@@ -248,5 +248,6 @@ stack <- c(sd3, sd7, pc17.sd7, pc23.sd3)
 plot(stack, col=viridis(100))
 
 #I due anni presentano una variabilità simile
+#e mantengono una bassa eterogeneità
 #La differenza tra la deviazione standard calcolata sulla banda NIR 
-# equella calcolata sul PC1 non è così evidente.
+#e quella calcolata sul PC1 non è così evidente.
