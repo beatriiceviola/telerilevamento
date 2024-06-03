@@ -60,7 +60,7 @@ tot1992 <- ncell(m1992c)
 tot1992
 #tot= 1800000
 
-#Ora per avere la proporzione vera e propria faccimao la frequenza diviso il totale
+#Ora per avere la proporzione vera e propria facciamo la frequenza diviso il totale
 prop1992 = f1992/tot1992
 prop1992 #la colonna count è quella che ci interessa
 
