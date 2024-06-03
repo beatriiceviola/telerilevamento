@@ -1,6 +1,6 @@
 #Visualizziamo immagini 
 
-library(terra) #richiamo i pacchetti che mi servono, senza virgolette perché li abbimao già scaricati
+library(terra) #richiamo i pacchetti che mi servono, senza virgolette perché li abbiamo già scaricati
 library(imageRy)
 
 #Usiamo la funzione di imageRy im.list()
