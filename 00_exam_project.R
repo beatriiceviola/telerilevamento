@@ -1,9 +1,12 @@
-#Richiamo i pacchetti che andrò ad utilizzare
+#Richiamo i pacchetti che andrò ad utilizzare che avevo già installato su R
 library(terra) #per la funzione rast
 library(ggplot2) #per costruire grafici
 library(viridis) #per avere una colorRampoPalette adatta ai daltonici
 library(imageRy) #per la funzione im.classify(), im.pca() e im.plotRGB()
 library(patchwork) #per unire i grafici
+
+#Specifico come ho installato il pacchetto imageRy
+devtools:: install_github("ducciorocchini/imageRy")
 
 #Il progetto riguarda una zona di riforestazione nei dintorni di Miguel Pereira in Brasile
 #Dopo gli incendi del 2014 sono stati ripiantati più di 600 mila alberi tra il 2018 e il 2021
