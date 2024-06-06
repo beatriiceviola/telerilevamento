@@ -97,7 +97,7 @@ ndvi2023 = dvi2023/(fc2023[[1]]+fc2023[[2]])
 plot(ndvi2023, col=cold) 
 
 #Dalle due immagini vicine riusciamo a vedere come nel 2023 la vegetazione (che appare verde)
-#sia aumentata, ma come facciamo a capirlo non solo qualitativamente ma anche qunatitativamente?
+#sia aumentata, ma come facciamo a capirlo non solo qualitativamente ma anche quantitativamente?
 
 #CLASSIFICAZIONE 
 #Classifichiamo con 2 cluster le immagini
